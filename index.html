@@ -224,22 +224,22 @@
             border: none;
         }
 
-        /* 🎯 最後一頁壓軸極簡 Join us 夾心艙 */
+        /* 🎯 最後一頁壓軸極簡 Join us 夾心艙 ── 🔧 修正：overflow 改為 visible，防止裁剪按鈕 */
         .last-page-footer-box {
             width: calc(100% + 80px);
             margin-left: -40px;
             margin-top: 25px;
-            position: relative; /* 為了讓 Join now 按鈕能疊加在 kids.png 上方 */
-            overflow: hidden;
+            position: relative; 
+            overflow: visible; /* 🎨 解鎖：不隱藏溢出，讓按鈕完全展露！ */
             display: block;
         }
 
-        /* 🎯 智慧按鈕定位：縮小為 110px，精準移到最右邊數過來第 1、2 位學員的頭頂上方 */
+        /* 🎯 智慧按鈕定位：縮小為 110px，🔧 修正：加入超強 z-index: 999 絕對不被底圖壓在身下 */
         .join-us-btn-container {
             position: absolute;
-            bottom: 72%; /* 向上抬高，不碰觸下方學員的臉 */
-            right: 28px; /* 🎨 依照指令：從置中改為往右移，對齊右邊數來第 1、2 位學員上方 */
-            z-index: 10;
+            bottom: 72%; /* 向上抬高，完美懸浮於右側學員上方 */
+            right: 28px; 
+            z-index: 999; /* 🎨 解鎖：宇宙最高圖層權限，確保 100% 浮在最表面！ */
             text-align: center;
         }
 
@@ -426,7 +426,7 @@
 
         <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在最右邊學員頭頂上方的 join now 1.png 按鈕 -->
         <div class="last-page-footer-box">
-            <!-- 🎯 智慧按鈕定位：縮小為 110px，懸浮在最右邊數來第 1、2 位學員頭頂正上方，絕不碰臉 -->
+            <!-- 🎯 智慧按鈕定位：強制解鎖 z-index: 999 且 overflow: visible！ 100% 完全外顯漂浮於右側學員上方 -->
             <div class="join-us-btn-container">
                 <a href="contract.html">
                     <img src="join now 1.png" alt="立即線上簽約鎖定名額" class="cta-join-us-img">
