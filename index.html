@@ -10,8 +10,8 @@
             --uci-blue: #1b3d6d;
             --uci-gold: #fecc07;
             --pyp-teal: #0077b6;
-            --soft-red: #f32d2d; /* 🎨 依照指令：100% 改成 Kids 圖檔裡左邊第一位女孩子頭髮上的經典亮麗暖紅色！ */
-            --dark-red: #c91e1e;
+            --soft-red: #e60012; /* 🎨 依照指令：100% 對齊 Kids 最左邊女孩頭髮上經典又溫暖的「巴比亮大紅」！ */
+            --dark-red: #b3000e;
         }
 
         * {
@@ -53,10 +53,10 @@
             flex: 1;
         }
 
-        /* 🚀 第一頁：標題精實大紅底色背景艙（🎨 依照指令：拿掉補習班 Logo 且大幅縮窄不留空位） */
+        /* 🚀 第一頁：標題精實大紅底色背景艙 */
         .header-flex-box {
             background-color: var(--soft-red);
-            padding: 12px 20px; /* 🎨 縮窄上下 Padding，讓红牆精緻俐落不留多餘空間 */
+            padding: 15px 20px; /* 縮窄上下 Padding，讓红牆精緻俐落 */
             border-radius: 6px;
             margin-bottom: 20px;
             width: 100%;
@@ -65,14 +65,14 @@
         /* 🎯 標題文字區塊：全寬度、三行文字 100% 絕對置中 */
         .title-group {
             width: 100%;
-            text-align: center; /* 🎨 依照指令：三行文字全部置中 */
+            text-align: center;
             overflow: hidden;
         }
 
-        /* 🎨 依照指令：句子加長、字體放到極致最大、保持不換行護盾與 3D 碳黑投影 */
+        /* 🎨 標題與副標題：依照指令加長、不換行、注入立體黑陰影 */
         .title-group h1 { 
-            margin: 0 0 4px 0; 
-            font-size: 32px; /* 字體放更大 */
+            margin: 0 0 6px 0; 
+            font-size: 30px; 
             line-height: 1.1;
             white-space: nowrap; 
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
@@ -83,17 +83,10 @@
             font-weight: bold; 
         }
 
-        .title-group h1 span.sub-title { 
-            font-size: 0.65em; 
-            color: #fff; 
-            font-weight: bold; 
-            margin-left: 6px;
-        }
-
         .title-group h3 {
             color: #fff; 
             margin: 4px 0;
-            font-size: 20px; /* 字體放更大 */
+            font-size: 20px; 
             font-weight: bold;
             line-height: 1.2;
             text-align: center;
@@ -102,7 +95,7 @@
         }
 
         .title-group h3.eng-sub { 
-            font-size: 14.5px; /* 字體放更大 */
+            font-size: 14.5px; 
             color: var(--uci-gold); 
             margin-bottom: 0;
             font-style: italic;
@@ -125,47 +118,50 @@
             text-align: justify;
         }
 
-        /* 💡 課程號角看板 */
+        /* 💡 課程號角看板 ── 🎨 依照指令：刪除左邊紅線，整段完全置中 */
         .pyp-badge {
             background-color: transparent;
-            border-left: 4px solid var(--soft-red);
-            padding: 8px 15px;
-            margin: 15px 0;
+            border-left: none; /* 100% 刪除左邊紅直線 */
+            padding: 5px 15px;
+            margin: 20px 0;
             border-radius: 0;
+            text-align: center; /* 🎨 依照指令：體驗文案整段置中 */
         }
 
         .pyp-badge h4 {
-            margin: 0 0 4px 0;
+            margin: 0 0 6px 0;
             color: var(--soft-red);
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
             line-height: 1.4;
+            text-align: center;
         }
 
         .pyp-badge p {
-            margin: 0 0 4px 0;
-            font-size: 12.5px;
+            margin: 0 0 6px 0;
+            font-size: 13.5px;
             color: #333;
-            line-height: 1.5;
+            line-height: 1.6;
+            text-align: center;
         }
 
         /* 🔒 剛性方格表格地基 */
         table { 
             width: 100%; 
             border-collapse: collapse; 
-            margin-top: 10px; 
-            margin-bottom: 15px; 
-            font-size: 12.5px;
+            margin-top: 15px; 
+            margin-bottom: 25px; 
+            font-size: 13px;
             table-layout: fixed;
             word-wrap: break-word;
         }
 
         th, td { 
             border: 1px solid #bdc3c7; 
-            padding: 8px; 
+            padding: 10px; 
             vertical-align: middle; 
             text-align: left; 
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         th { 
@@ -229,11 +225,12 @@
             display: block;
         }
 
-        /* 🎯 智慧按鈕定位：完全外顯漂浮於右側學員上方 */
+        /* 🎯 智慧按鈕定位：縮小為 110px，🎨 依照指令：重回中間黑頭髮小男孩的正上方，並且 100% 完全顯示 */
         .join-us-btn-container {
             position: absolute;
-            bottom: 72%; 
-            right: 28px; 
+            bottom: 72%; /* 向上抬高，完美定位在黑頭髮小男孩頭頂正上方 */
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 999; 
             text-align: center;
         }
@@ -290,7 +287,7 @@
             th { min-width: 110px; }
             .footer-image-box { width: calc(100% + 40px); margin-left: -20px; }
             .last-page-footer-box { width: calc(100% + 40px); margin-left: -20px; }
-            .join-us-btn-container { bottom: 65%; right: 15px; }
+            .join-us-btn-container { bottom: 65%; }
         }
     </style>
 </head>
@@ -301,12 +298,11 @@
     <!-- ================= PAGE 1 ================= -->
     <div class="page">
         <div class="page-content">
-            <!-- 🚀 第一頁標題：精實俐落的「皇家女孩髮飾紅」背景牆，三句加長大字體完全置中 ── -->
+            <!-- 🚀 第一頁標題：精實俐落的「巴比最美亮麗女孩暖紅」背景牆，三行句子大器更換完全置中 ── -->
             <div class="header-flex-box">
                 <div class="title-group">
-                    <h1>✨ <span class="main-title">Let's Go 1 Foundational Kids Class</span> ✨</h1>
-                    <h3>美語不害怕！巴比老師的遊戲大膽說1級基礎特訓班</h3>
-                    <h3 class="eng-sub">Play & Speak English with Absolute Confidence! Level 1 Foundational Class</h3>
+                    <h1>✨ <span class="main-title">【Let's Go 1】美語不害怕！巴比老師的遊戲大膽說1級班</span> ✨</h1>
+                    <h3>Let's Go! Play & Speak English with Confidence Level 1 !</h3>
                 </div>
             </div>
 
@@ -437,17 +433,17 @@
                 </tbody>
             </table>
 
-            <!-- 💡 課程號角看板 -->
+            <!-- 💡 依照指令：100% 替換為全新號角文案，刪除左側紅線，整段完美置中 -->
             <div class="pyp-badge">
                 <h4>🎯 預約巴比老師專屬體驗課 | Book Your Trial Lesson Today</h4>
-                <p><strong>現在就幫孩子預約巴比老師的體驗，踏出大膽開口的第一步！</strong></p>
+                <p>現在就幫孩子預約巴比老師的體驗，踏出大膽開口的第一步！</p>
                 <span class="eng-text" style="color: #444; font-weight: bold;">Book a trial lesson with Teacher Bobby today and take the first step toward bold fluency! Join us now!</span>
             </div>
         </div>
 
-        <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在最右邊學員頭頂上方、且列印時會智慧隱藏的 join now 1.png 按鈕 -->
+        <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在「中間黑頭髮小男孩」正上方的 join now 1.png 按鈕 -->
         <div class="last-page-footer-box">
-            <!-- 🎯 智慧按鈕定位：右移對齊最右邊第一、二位學員（女孩）頭頂空隙上方，寬度 110px 完美懸浮 -->
+            <!-- 🎯 智慧按鈕定位：縮小為 110px，100% 全浮現無遮擋漂浮在「中間黑頭髮小男孩」正上方 -->
             <div class="join-us-btn-container">
                 <a href="contract.html">
                     <img src="join now 1.png" alt="立即線上簽約鎖定名額" class="cta-join-us-img">
