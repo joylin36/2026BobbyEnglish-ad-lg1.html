@@ -2,48 +2,307 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <!-- 🎯 全載具核心天線：加入最標準的縮放網頁視窗雷達，確保行動裝置與列印排版完美適應 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Let's Go 1 課程介紹 | Course Introduction</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.4; color: #333; padding: 20px; }
-        .page { page-break-after: always; }
-        .page:last-child { page-break-after: avoid; }
-        h1 { color: #2c3e50; text-align: center; margin-bottom: 5px; }
-        h1 span.main-title { color: #e74c3c; font-weight: bold; } /* 教材專屬亮紅色 */
-        h1 span.sub-title { font-size: 0.6em; color: #c0392b; margin-left: 10px; font-weight: bold; }
-        h2 { color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 3px; margin-top: 15px; margin-bottom: 10px; }
-        h3 { color: #e74c3c; text-align: center; margin-top: 5px; margin-bottom: 5px; display: inline-block; width: 100%; white-space: nowrap; }
-        h3.eng-sub { font-size: 1.15em; color: #c0392b; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px; }
-        th, td { border: 1px solid #bdc3c7; padding: 10px; text-align: left; vertical-align: middle; }
-        th { background-color: #fdebd0; color: #e74c3c; text-align: center; }
+        :root {
+            --uci-blue: #1b3d6d;
+            --uci-gold: #fecc07;
+            --pyp-teal: #0077b6;
+            --soft-red: #e74c3c;
+            --dark-red: #c0392b;
+        }
+
+        * {
+            box-shadow: none;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Noto Sans TC', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+        }
+
+        body { 
+            background-color: #f4f7f6; 
+            margin: 0; 
+            padding: 20px 0; 
+            color: #333; 
+            line-height: 1.5; 
+        }
+
+        .ad-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* 📄 剛性分頁與頁面保護 */
+        .page { 
+            position: relative;
+            background: #fff;
+            padding: 30px 40px 0 40px; /* 底部不留白，交給 kids.png 貼滿 */
+            overflow: hidden;
+        }
+
+        /* 🚀 第一頁標題 + Logo 並排核心艙 */
+        .header-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--soft-red);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .title-group {
+            flex: 1;
+            text-align: left;
+        }
+
+        .header-section h1 { 
+            margin: 0; 
+            font-size: 26px; 
+            line-height: 1.2;
+        }
+
+        .header-section h1 span.main-title { 
+            color: var(--soft-red); 
+            font-weight: bold; 
+        }
+
+        .header-section h1 span.sub-title { 
+            font-size: 0.6em; 
+            color: var(--dark-red); 
+            font-weight: bold; 
+            margin-left: 8px;
+        }
+
+        /* 巴比去背 Logo：與標題同寬等高和諧 */
+        .logo-img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        h2 { 
+            color: #2c3e50; 
+            border-bottom: 2px solid var(--soft-red); 
+            padding-bottom: 5px; 
+            margin-top: 25px; 
+            margin-bottom: 15px; 
+            font-size: 18px;
+        }
+
+        h3 { 
+            color: var(--soft-red); 
+            text-align: center; 
+            margin-top: 5px; 
+            margin-bottom: 5px; 
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        h3.eng-sub { 
+            font-size: 14px; 
+            color: var(--dark-red); 
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 13.5px;
+            margin: 0 0 10px 0;
+            text-align: justify;
+        }
+
+        /* 💡 IB PYP 專屬探究小看板 */
+        .pyp-badge {
+            background-color: rgba(0, 119, 182, 0.05);
+            border-left: 4px solid var(--pyp-teal);
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .pyp-badge h4 {
+            margin: 0 0 4px 0;
+            color: var(--pyp-teal);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .pyp-badge p {
+            margin: 0;
+            font-size: 12px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* 🔒 剛性方格表格地基 */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 15px; 
+            margin-bottom: 25px; 
+            font-size: 13px;
+            table-layout: fixed;
+            word-wrap: break-word;
+        }
+
+        th, td { 
+            border: 1px solid #bdc3c7; 
+            padding: 10px; 
+            vertical-align: middle; 
+            text-align: left; 
+            line-height: 1.5;
+        }
+
+        th { 
+            background-color: #fdebd0; 
+            color: var(--soft-red); 
+            text-align: center; 
+            font-weight: bold;
+        }
+
         .center-text { text-align: center; font-weight: bold; }
         .center-table td { text-align: center; }
         .center-table td.left-align { text-align: left; }
-        ul { padding-left: 20px; margin-bottom: 5px; }
-        li { margin-bottom: 8px; }
-        .grammar-section { background-color: #fafafa; border-left: 4px solid #e74c3c; padding: 12px; margin-bottom: 20px; border-radius: 4px; }
-        .note { font-size: 0.85em; color: #7f8c8d; font-weight: normal; margin-top: 4px; display: block; }
-        .footer { text-align: center; margin-top: 40px; font-weight: bold; font-size: 1.2em; color: #e74c3c; }
-        .highlight { font-weight: bold; color: #e74c3c; }
-        .eng-text { color: #555; display: block; margin-top: 2px; }
+
+        ul { padding-left: 20px; margin-bottom: 15px; }
+        li { margin-bottom: 6px; font-size: 13px; }
+
+        .grammar-section { 
+            background-color: #fafafa; 
+            border-left: 4px solid var(--soft-red); 
+            padding: 12px; 
+            margin-bottom: 20px; 
+            border-radius: 4px; 
+            font-size: 13px;
+        }
+
+        .note { 
+            font-size: 11px; 
+            color: #7f8c8d; 
+            font-weight: normal; 
+            margin-top: 4px; 
+            display: block; 
+        }
+
+        .footer { 
+            text-align: center; 
+            margin-top: 15px; 
+            margin-bottom: 15px;
+            font-weight: bold; 
+            font-size: 14px; 
+            color: var(--soft-red); 
+            line-height: 1.5;
+        }
+
+        .highlight { font-weight: bold; color: var(--soft-red); }
+        .eng-text { color: #555; display: block; margin-top: 2px; font-size: 12px; }
+
+        /* 📸 每頁最下方的滿版 kids.png 圖檔晶片 (100% 左右填滿) */
+        .footer-image-box {
+            width: calc(100% + 80px); /* 補足 .page 兩側的 padding 40px 寬度 */
+            margin-left: -40px; /* 向左位移 40px 以求貼合左右邊緣 */
+            margin-top: 20px;
+            overflow: hidden;
+            display: block;
+        }
+
+        .page-footer-img {
+            width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        /* 🎯 最後一頁壓軸極簡 Join us 夾心艙 */
+        .last-page-footer-box {
+            width: calc(100% + 80px);
+            margin-left: -40px;
+            margin-top: 20px;
+            position: relative; /* 為了讓 Join us 按鈕能疊加在 kids.png 上方 */
+            overflow: hidden;
+            display: block;
+        }
+
+        /* 🎯 迷你點擊按鈕：精準鎖死寬度 135px，居中疊加在 kids.png 底圖上方 */
+        .join-us-btn-container {
+            position: absolute;
+            top: 20px; /* 放置在 kids.png 頂端的上方正中間 */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            text-align: center;
+        }
+
+        .cta-join-us-img {
+            width: 100%;
+            max-width: 135px; /* 再度縮小，呈現精緻皇家感 */
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s, filter 0.2s;
+            display: block;
+        }
+
+        .cta-join-us-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.08);
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 0; }
+            .ad-container { border-radius: 0; box-shadow: none; }
+            .page { padding: 20px 20px 0 20px; }
+            .header-section { flex-direction: column; text-align: center; gap: 10px; }
+            .title-group { text-align: center; }
+            .logo-img { max-width: 140px; }
+            table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            td { min-width: 180px; }
+            th { min-width: 110px; }
+            .footer-image-box { width: calc(100% + 40px); margin-left: -20px; }
+            .last-page-footer-box { width: calc(100% + 40px); margin-left: -20px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- PAGE 1: 課程理念 & 課程核心教學重點 -->
+<div class="ad-container">
+
+    <!-- ================= PAGE 1 ================= -->
     <div class="page">
-        <h1>✨ <span class="main-title">Let's Go 1</span> <span class="sub-title">Foundational Class</span> ✨</h1>
+        <!-- 🚀 第一頁標題與 Logo 完美並排艙 -->
+        <div class="header-section">
+            <div class="title-group">
+                <h1>✨ <span class="main-title">Let's Go 1</span> <span class="sub-title">Foundational Class</span> ✨</h1>
+            </div>
+            <!-- 巴比專屬去背標章 ── 寬度與標題等寬和諧 -->
+            <img src="BOBBY ENGLISH SCHOOL_去背檔.png" alt="巴比美語補習班專屬去背標章" class="logo-img">
+        </div>
+        
         <h3>美語不害怕！巴比老師的遊戲大膽說1級班</h3>
         <h3 class="eng-sub">Play & Speak English with Confidence! Level 1 Foundational Class</h3>
-        <hr>
+        
+        <!-- 💡 標題右邊放入 IB PYP 的中英全名導航 -->
+        <div class="pyp-badge">
+            <h4>🌍 IB PYP 國際文憑小學項目 (International Baccalaureate Primary Years Programme) 探究整合</h4>
+            <p>我們結合 IB PYP 探究教學架構與三大神級 App (Epic!/Seesaw/Nearpod)，以 Bobby 老師一對一無比的愛心與耐心為引航，牽著孩子的手，讓英語自然流露、高頻開口！</p>
+        </div>
+
         <h2>💡 課程理念 | Course Concept</h2>
-        <p style="margin-bottom: 8px;"><strong>全美語聽不懂？不敢說？巴比老師用滿滿的遊戲，帶孩子在玩樂中無痛解鎖聽、說、讀！</strong></p>
-        <p style="margin-bottom: 8px;">我們不急著讓剛接觸美語的寶貝拿筆死記硬背，而是透過精心設計的互動與配對遊戲，先讓孩子徹底愛上開口的第一步！從模仿到自信表達，自然而然建立扎實的語感。</p>
-        <p style="margin-bottom: 8px;"><strong>Too shy to speak in an all-English classroom? Teacher Bobby uses fun games to help kids effortlessly unlock listening, speaking, and reading!</strong></p>
-        <p style="margin-bottom: 15px;">No rush to write—our priority is to make children fall in love with their very first steps in English! Through immersive matching, imitating, and repeating activities, we lay a joyful and solid foundation for early English enlightenment.</p>
+        <p><strong>全美語聽不懂？不敢說？巴比老師用滿滿的遊戲，帶孩子在玩樂中無痛解鎖聽、說、讀！</strong></p>
+        <p>我們不急著讓剛接觸美語的寶貝拿筆死記硬背，而是透過精心設計的互動與配對遊戲，先讓孩子徹底愛上開口的第一步！從模仿到自信表達，自然而然建立扎實的語感。</p>
+        <p><strong>Too shy to speak in an all-English classroom? Teacher Bobby uses fun games to help kids effortlessly unlock listening, speaking, and reading!</strong></p>
+        <p>No rush to write—our priority is to make children fall in love with their very first steps in English! Through immersive matching, imitating, and repeating activities, we lay a joyful and solid foundation for early English enlightenment.</p>
 
         <h2>🎯 課程核心教學重點 | Course Highlights</h2>
-        <p style="margin-bottom: 8px;">本課程專注於啟發孩子的雙語感知，全方位奠定美語啟盟基礎：</p>
+        <p>本課程專注於啟發孩子的雙語感知，全方位奠定美語啟盟基礎：</p>
         <table>
             <thead>
                 <tr>
@@ -69,10 +328,15 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- 📸 PAGE 1 最下方滿版 kids.png -->
+        <div class="footer-image-box">
+            <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
+        </div>
     </div>
 
-    <!-- PAGE 2: 8大單元主題 & 實用聽說練習精華 -->
-    <div class="page">
+    <!-- ================= PAGE 2 ================= -->
+    <div class="page" style="padding-top: 15px;">
         <h2>🗺️ 8大單元主題與發音寶庫 | Themes & Phonics</h2>
         <p>聚焦於實用生活子音與五大短母音，帶領孩子展開有趣的主題探索：</p>
         <ul>
@@ -99,10 +363,15 @@
             <li>清楚表達自己想吃的食物，並能熱情詢問體人的飲食喜好。<br><span class="eng-text">Express what food one wants to eat and ask others about their food preferences.</span></li>
             <li>樂於與他人分享並主動詢問彼此最喜歡的顏色與動物。<br><span class="eng-text">Share and ask others about their favorite colors and animals with joy.</span></li>
         </ul>
+
+        <!-- 📸 PAGE 2 最下方滿版 kids.png -->
+        <div class="footer-image-box" style="margin-top: 30px;">
+            <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
+        </div>
     </div>
 
-    <!-- PAGE 3: 核心語法觀念 & 班級招生資訊 -->
-    <div class="page">
+    <!-- ================= PAGE 3 ================= -->
+    <div class="page" style="padding-top: 15px;">
         <h2>📝 核心語法觀念 | Grammar Essentials</h2>
         <div class="grammar-section">
             <p style="margin: 0 0 6px 0; font-weight: bold;">精準掌握代名詞、所有格、人稱代名詞與 Be 動詞用法；熟練 Wh-問句、場所介系詞、不定冠詞 (a/an)、指示詞 (this/that/these/those) 以及 there 引導的存在句型。</p>
@@ -153,7 +422,21 @@
             ✨ 席次非常有限！現在就幫孩子預約巴比老師的體驗，踏出大膽開口的第一步！ ✨<br>
             ✨ Seats are limited! Book a trial lesson with Teacher Bobby today and take the first step toward bold fluency! Join us now! ✨
         </div>
+
+        <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在中央上方的 Join us 迷你智慧按鈕 -->
+        <div class="last-page-footer-box">
+            <!-- 🎯 迷你點擊按鈕：對接全新上傳之 Join us.png (寬度極致精簡成 135px，垂直居中疊加在 kids.png 頂端上方) -->
+            <div class="join-us-btn-container">
+                <a href="contract.html">
+                    <img src="Join us.png" alt="立即線上簽約鎖定名額" class="cta-join-us-img">
+                </a>
+            </div>
+            <!-- 📸 底圖滿版左右填滿 -->
+            <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
+        </div>
     </div>
+
+</div>
 
 </body>
 </html>
