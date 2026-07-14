@@ -50,56 +50,62 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 25px;
-            /* 🎨 依照指令：從左到右紅色背景填滿，高度適應，圓角質感 */
             background-color: var(--soft-red);
-            padding: 20px 25px;
+            padding: 22px 25px;
             border-radius: 6px;
         }
 
         /* 🎯 標題文字區塊：寬度自適應，文字置中 */
         .title-group {
             flex: 1;
-            text-align: center; /* 🎨 依照指令：設定標題文字位置為「置中」 */
+            text-align: center;
+            overflow: hidden; /* 防止溢出 */
         }
 
+        /* 🎨 標題與副標題：放大、不換行、注入立體黑陰影 */
         .title-group h1 { 
             margin: 0 0 8px 0; 
-            font-size: 24px; 
-            line-height: 1.2;
+            font-size: 28px; /* 極致放大 */
+            line-height: 1.1;
+            white-space: nowrap; /* 剛性護盾：確保 100% 絕對不換行 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45); /* 3D立體投影：即使大字也清晰無比 */
         }
 
-        /* 🎨 依照指令：字的顏色比照 Let's Go 1 課程的黃金與亮白配色表現 */
         .title-group h1 span.main-title { 
-            color: var(--uci-gold); /* 改用耀眼高貴的 Let's Go 1 黃金黃 */
+            color: var(--uci-gold); 
             font-weight: bold; 
         }
 
         .title-group h1 span.sub-title { 
             font-size: 0.6em; 
-            color: #fff; /* 改用亮白色，在紅牆背景下極度醒目 */
+            color: #fff; 
             font-weight: bold; 
-            margin-left: 8px;
+            margin-left: 6px;
         }
 
         .title-group h3 {
-            color: #fff; /* 中文副標改用白色，高溫暖對比 */
-            margin: 5px 0;
-            font-size: 16px;
+            color: #fff; 
+            margin: 6px 0;
+            font-size: 18px; /* 極致放大 */
             font-weight: bold;
-            line-height: 1.4;
+            line-height: 1.3;
             text-align: center;
+            white-space: nowrap; /* 剛性護盾：確保 100% 絕對不換行 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45); /* 3D立體投影 */
         }
 
         .title-group h3.eng-sub { 
-            font-size: 12.5px; 
-            color: var(--uci-gold); /* 英文副標比照黃金配色 */
+            font-size: 13.5px; /* 極致放大 */
+            color: var(--uci-gold); 
             margin-bottom: 0;
             font-style: italic;
+            white-space: nowrap; /* 剛性護盾：確保 100% 絕對不換行 */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45); /* 3D立體投影 */
         }
 
-        /* 巴比專屬置右去背 Logo ── 依照指令：右邊 Logo 完全保持原樣，不受置中影響 */
+        /* 巴比專屬置右去背 Logo ── 保持原樣，不受任何影響 */
         .logo-img {
             width: 100%;
             max-width: 160px;
@@ -228,12 +234,11 @@
             display: block;
         }
 
-        /* 🎯 迷你點擊按鈕：精準定位懸浮在 kids.png 中間黑頭髮小男孩的正上方 */
+        /* 🎯 智慧按鈕定位：縮小為 110px，精準移到最右邊數過來第 1、2 位學員的頭頂上方 */
         .join-us-btn-container {
             position: absolute;
-            bottom: 72%; /* 向上抬高，完美定位在黑頭髮小男孩頭頂正上方 */
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 72%; /* 向上抬高，不碰觸下方學員的臉 */
+            right: 28px; /* 🎨 依照指令：從置中改為往右移，對齊右邊數來第 1、2 位學員上方 */
             z-index: 10;
             text-align: center;
         }
@@ -257,14 +262,18 @@
             .ad-container { border-radius: 0; box-shadow: none; }
             .page { padding: 20px 20px 0 20px; }
             .header-flex-box { flex-direction: column-reverse; text-align: center; padding: 15px 15px; }
-            .title-group { text-align: center; }
+            .title-group { text-align: center; width: 100%; }
+            /* 行動端寬度自動縮小字體以防溢出 */
+            .title-group h1 { font-size: 5.2vw; }
+            .title-group h3 { font-size: 3.8vw; }
+            .title-group h3.eng-sub { font-size: 2.8vw; }
             .logo-img { max-width: 130px; margin-bottom: 10px; }
             table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             td { min-width: 180px; }
             th { min-width: 110px; }
             .footer-image-box { width: calc(100% + 40px); margin-left: -20px; }
             .last-page-footer-box { width: calc(100% + 40px); margin-left: -20px; }
-            .join-us-btn-container { bottom: 65%; } /* 行動端適應定位 */
+            .join-us-btn-container { bottom: 65%; right: 15px; } /* 行動端適應定位 */
         }
     </style>
 </head>
@@ -274,7 +283,7 @@
 
     <!-- ================= PAGE 1 ================= -->
     <div class="page">
-        <!-- 🚀 第一頁標題與 Logo 完美並排艙 ── 注入 Let's Go 1 標誌紅色背景與文字置中配重 -->
+        <!-- 🚀 第一頁標題與 Logo 完美並排艙 ── 注入立體投影大標題與置右去背 Logo -->
         <div class="header-flex-box">
             <div class="title-group">
                 <h1>✨ <span class="main-title">Let's Go 1</span> <span class="sub-title">Foundational Class</span> ✨</h1>
@@ -302,7 +311,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="center-text">🔤 字母與拼讀啟蒙<br>Alphabet & Phonics</td>
+                    <td class="center-text">🔤 字母與拼讀啟盟<br>Alphabet & Phonics</td>
                     <td>掌握 26 個英文字母的標準書寫與認讀，並開始具備拼湊與連結英文字母以組成單字的初階能力。<br>
                     <span class="eng-text">Master standard alphabet writing and recognition, while beginning to recall and connect letters that form basic words!</span></td>
                 </tr>
@@ -408,16 +417,16 @@
             </tbody>
         </table>
 
-        <!-- 💡 依照指令：100% 替換為全新熱情的體驗預約號角文案 -->
+        <!-- 💡 課程號角看板 -->
         <div class="pyp-badge">
             <h4>🎯 預約巴比老師專屬體驗課 | Book Your Trial Lesson Today</h4>
             <p><strong>現在就幫孩子預約巴比老師的體驗，踏出大膽開口的第一步！</strong></p>
             <span class="eng-text" style="color: #444; font-weight: bold;">Book a trial lesson with Teacher Bobby today and take the first step toward bold fluency! Join us now!</span>
         </div>
 
-        <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在「中間黑頭髮小男孩」正上方的 join now 1.png 按鈕 -->
+        <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在最右邊學員頭頂上方的 join now 1.png 按鈕 -->
         <div class="last-page-footer-box">
-            <!-- 🎯 智慧按鈕定位：縮小為 110px，懸浮在黑頭髮小男孩正上方，不碰到任何字體與臉部 -->
+            <!-- 🎯 智慧按鈕定位：縮小為 110px，懸浮在最右邊數來第 1、2 位學員頭頂正上方，絕不碰臉 -->
             <div class="join-us-btn-container">
                 <a href="contract.html">
                     <img src="join now 1.png" alt="立即線上簽約鎖定名額" class="cta-join-us-img">
