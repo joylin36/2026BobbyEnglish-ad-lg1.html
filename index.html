@@ -45,20 +45,23 @@
             overflow: hidden;
         }
 
-        /* 🚀 第一頁：標題與 Logo 黃金左右並排艙 */
+        /* 🚀 第一頁：標題大紅底色背景與 Logo 左右並排艙 */
         .header-flex-box {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 20px;
             margin-bottom: 25px;
-            border-bottom: 1px solid #f0f0f0; /* 給予淡淡的皇家底線，取代突兀的紅線 */
-            padding-bottom: 20px;
+            /* 🎨 依照指令：從左到右紅色背景填滿，高度適應，圓角質感 */
+            background-color: var(--soft-red);
+            padding: 20px 25px;
+            border-radius: 6px;
         }
 
+        /* 🎯 標題文字區塊：寬度自適應，文字置中 */
         .title-group {
             flex: 1;
-            text-align: left; /* 配合 Logo 置右，標題向左對齊，呈現極佳配重 */
+            text-align: center; /* 🎨 依照指令：設定標題文字位置為「置中」 */
         }
 
         .title-group h1 { 
@@ -67,25 +70,43 @@
             line-height: 1.2;
         }
 
+        /* 🎨 依照指令：字的顏色比照 Let's Go 1 課程的黃金與亮白配色表現 */
         .title-group h1 span.main-title { 
-            color: var(--soft-red); 
+            color: var(--uci-gold); /* 改用耀眼高貴的 Let's Go 1 黃金黃 */
             font-weight: bold; 
         }
 
         .title-group h1 span.sub-title { 
             font-size: 0.6em; 
-            color: var(--dark-red); 
+            color: #fff; /* 改用亮白色，在紅牆背景下極度醒目 */
             font-weight: bold; 
             margin-left: 8px;
         }
 
-        /* 巴比去背 Logo：完美置於標題右側，維持等寬和諧比例 */
+        .title-group h3 {
+            color: #fff; /* 中文副標改用白色，高溫暖對比 */
+            margin: 5px 0;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .title-group h3.eng-sub { 
+            font-size: 12.5px; 
+            color: var(--uci-gold); /* 英文副標比照黃金配色 */
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* 巴比專屬置右去背 Logo ── 依照指令：右邊 Logo 完全保持原樣，不受置中影響 */
         .logo-img {
             width: 100%;
-            max-width: 180px;
+            max-width: 160px;
             height: auto;
             object-fit: contain;
             flex-shrink: 0;
+            background-color: transparent;
         }
 
         h2 { 
@@ -97,32 +118,17 @@
             font-size: 18px;
         }
 
-        h3 { 
-            color: var(--soft-red); 
-            margin-top: 5px; 
-            margin-bottom: 5px; 
-            font-size: 17px;
-            font-weight: bold;
-            line-height: 1.4;
-        }
-
-        h3.eng-sub { 
-            font-size: 13px; 
-            color: var(--dark-red); 
-            margin-bottom: 0;
-        }
-
         p {
             font-size: 13.5px;
             margin: 0 0 10px 0;
             text-align: justify;
         }
 
-        /* 💡 IB PYP 專屬探究大看板 ── 100% 去背、左側為紅線 */
+        /* 💡 課程號角看板 ── 去背、左側為亮紅直線 */
         .pyp-badge {
             background-color: transparent;
             border-left: 4px solid var(--soft-red);
-            padding: 5px 15px;
+            padding: 10px 15px;
             margin: 20px 0;
             border-radius: 0;
         }
@@ -130,8 +136,9 @@
         .pyp-badge h4 {
             margin: 0 0 6px 0;
             color: var(--soft-red);
-            font-size: 14.5px;
+            font-size: 15px;
             font-weight: bold;
+            line-height: 1.4;
         }
 
         .pyp-badge p {
@@ -249,9 +256,9 @@
             body { padding: 0; }
             .ad-container { border-radius: 0; box-shadow: none; }
             .page { padding: 20px 20px 0 20px; }
-            .header-flex-box { flex-direction: column-reverse; text-align: center; gap: 15px; }
+            .header-flex-box { flex-direction: column-reverse; text-align: center; padding: 15px 15px; }
             .title-group { text-align: center; }
-            .logo-img { max-width: 140px; }
+            .logo-img { max-width: 130px; margin-bottom: 10px; }
             table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             td { min-width: 180px; }
             th { min-width: 110px; }
@@ -267,14 +274,14 @@
 
     <!-- ================= PAGE 1 ================= -->
     <div class="page">
-        <!-- 🚀 第一頁標題與 Logo 完美並排艙 ── 移除多餘橫線，使並排視覺大氣呈現 -->
+        <!-- 🚀 第一頁標題與 Logo 完美並排艙 ── 注入 Let's Go 1 標誌紅色背景與文字置中配重 -->
         <div class="header-flex-box">
             <div class="title-group">
                 <h1>✨ <span class="main-title">Let's Go 1</span> <span class="sub-title">Foundational Class</span> ✨</h1>
                 <h3>美語不害怕！巴比老師的遊戲大膽說1級班</h3>
                 <h3 class="eng-sub">Play & Speak English with Confidence! Level 1 Foundational Class</h3>
             </div>
-            <!-- 巴比專屬置右去背 Logo -->
+            <!-- 巴比專屬置右去背 Logo：完美保持右側位置不受標題置中影響 -->
             <img src="BOBBY ENGLISH SCHOOL_去背檔.png" alt="巴比美語補習班專屬去背標章" class="logo-img">
         </div>
 
@@ -401,16 +408,16 @@
             </tbody>
         </table>
 
-        <!-- 💡 依照指令：左邊直線為亮紅色 -->
+        <!-- 💡 依照指令：100% 替換為全新熱情的體驗預約號角文案 -->
         <div class="pyp-badge">
-            <h4>🌍 IB PYP 國際文憑小學項目 Class 探究整合 | International Baccalaureate Primary Years Programme Integration</h4>
-            <p>我們結合 IB PYP 探究教學架構與三大神級 App (Epic!/Seesaw/Nearpod)，以 Bobby 老師一對一無比的愛心與耐心為引航，牽著孩子的手，讓英語自然流露、高頻開口！</p>
-            <span class="eng-text" style="color: #444; font-style: italic;">We seamlessly integrate the IB Primary Years Programme (IB PYP) framework with three world-class educational apps (Epic!, Seesaw, and Nearpod). Guided by Teacher Bobby's profound patience and personal care, we nurture children's curiosity and encourage them to speak out boldly, helping them cultivate natural English fluency through high-frequency, active interaction!</span>
+            <h4>🎯 預約巴比老師專屬體驗課 | Book Your Trial Lesson Today</h4>
+            <p><strong>現在就幫孩子預約巴比老師的體驗，踏出大膽開口的第一步！</strong></p>
+            <span class="eng-text" style="color: #444; font-weight: bold;">Book a trial lesson with Teacher Bobby today and take the first step toward bold fluency! Join us now!</span>
         </div>
 
         <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在「中間黑頭髮小男孩」正上方的 join now 1.png 按鈕 -->
         <div class="last-page-footer-box">
-            <!-- 🎯 智慧按鈕定位：縮小為 110px，懸浮在黑頭髮小男孩正上方 -->
+            <!-- 🎯 智慧按鈕定位：縮小為 110px，懸浮在黑頭髮小男孩正上方，不碰到任何字體與臉部 -->
             <div class="join-us-btn-container">
                 <a href="contract.html">
                     <img src="join now 1.png" alt="立即線上簽約鎖定名額" class="cta-join-us-img">
