@@ -119,27 +119,27 @@
             text-align: justify;
         }
 
-        /* 💡 IB PYP 專屬探究小看板 */
+        /* 💡 IB PYP 專屬探究大看板（第三頁專屬黃金排版） */
         .pyp-badge {
             background-color: rgba(0, 119, 182, 0.05);
             border-left: 4px solid var(--pyp-teal);
-            padding: 12px 15px;
-            margin: 15px 0;
+            padding: 15px;
+            margin: 20px 0;
             border-radius: 0 4px 4px 0;
         }
 
         .pyp-badge h4 {
-            margin: 0 0 4px 0;
+            margin: 0 0 6px 0;
             color: var(--pyp-teal);
-            font-size: 14px;
+            font-size: 14.5px;
             font-weight: bold;
         }
 
         .pyp-badge p {
-            margin: 0;
-            font-size: 12px;
-            color: #444;
-            line-height: 1.5;
+            margin: 0 0 6px 0;
+            font-size: 13px;
+            color: #333;
+            line-height: 1.6;
         }
 
         /* 🔒 剛性方格表格地基 */
@@ -192,16 +192,6 @@
             display: block; 
         }
 
-        .footer { 
-            text-align: center; 
-            margin-top: 15px; 
-            margin-bottom: 15px;
-            font-weight: bold; 
-            font-size: 14px; 
-            color: var(--soft-red); 
-            line-height: 1.5;
-        }
-
         .highlight { font-weight: bold; color: var(--soft-red); }
         .eng-text { color: #555; display: block; margin-top: 2px; font-size: 12px; }
 
@@ -209,7 +199,7 @@
         .footer-image-box {
             width: calc(100% + 80px); /* 補足 .page 兩側的 padding 40px 寬度 */
             margin-left: -40px; /* 向左位移 40px 以求貼合左右邊緣 */
-            margin-top: 20px;
+            margin-top: 25px;
             overflow: hidden;
             display: block;
         }
@@ -226,13 +216,13 @@
         .last-page-footer-box {
             width: calc(100% + 80px);
             margin-left: -40px;
-            margin-top: 20px;
+            margin-top: 25px;
             position: relative; /* 為了讓 Join us 按鈕能疊加在 kids.png 上方 */
             overflow: hidden;
             display: block;
         }
 
-        /* 🎯 迷你點擊按鈕：精準鎖死寬度 135px，居中疊加在 kids.png 底圖上方 */
+        /* 🎯 迷你點擊按鈕：居中疊加在 kids.png 底圖上方 */
         .join-us-btn-container {
             position: absolute;
             top: 20px; /* 放置在 kids.png 頂端的上方正中間 */
@@ -244,7 +234,7 @@
 
         .cta-join-us-img {
             width: 100%;
-            max-width: 135px; /* 再度縮小，呈現精緻皇家感 */
+            max-width: 135px; /* 鎖死超精緻迷你寬度 */
             height: auto;
             cursor: pointer;
             transition: transform 0.2s, filter 0.2s;
@@ -282,18 +272,13 @@
             <div class="title-group">
                 <h1>✨ <span class="main-title">Let's Go 1</span> <span class="sub-title">Foundational Class</span> ✨</h1>
             </div>
-            <!-- 巴比專屬去背標章 ── 寬度與標題等寬和諧 -->
+            <!-- 巴比專屬去背標章 -->
             <img src="BOBBY ENGLISH SCHOOL_去背檔.png" alt="巴比美語補習班專屬去背標章" class="logo-img">
         </div>
         
         <h3>美語不害怕！巴比老師的遊戲大膽說1級班</h3>
         <h3 class="eng-sub">Play & Speak English with Confidence! Level 1 Foundational Class</h3>
-        
-        <!-- 💡 標題右邊放入 IB PYP 的中英全名導航 -->
-        <div class="pyp-badge">
-            <h4>🌍 IB PYP 國際文憑小學項目 (International Baccalaureate Primary Years Programme) 探究整合</h4>
-            <p>我們結合 IB PYP 探究教學架構與三大神級 App (Epic!/Seesaw/Nearpod)，以 Bobby 老師一對一無比的愛心與耐心為引航，牽著孩子的手，讓英語自然流露、高頻開口！</p>
-        </div>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
 
         <h2>💡 課程理念 | Course Concept</h2>
         <p><strong>全美語聽不懂？不敢說？巴比老師用滿滿的遊戲，帶孩子在玩樂中無痛解鎖聽、說、讀！</strong></p>
@@ -418,17 +403,19 @@
             </tbody>
         </table>
 
-        <div class="footer">
-            ✨ 席次非常有限！現在就幫孩子預約巴比老師的體驗，踏出大膽開口的第一步！ ✨<br>
-            ✨ Seats are limited! Book a trial lesson with Teacher Bobby today and take the first step toward bold fluency! Join us now! ✨
+        <!-- 💡 新增：IB PYP 國際文憑小學項目中英全能對齊解說艙 -->
+        <div class="pyp-badge">
+            <h4>🌍 IB PYP 國際文憑小學項目 Class 探究整合 | International Baccalaureate Primary Years Programme Integration</h4>
+            <p>我們結合 IB PYP 探究教學架構與三大神級 App (Epic!/Seesaw/Nearpod)，以 Bobby 老師一對一無比的愛心與耐心為引航，牽著孩子的手，讓英語自然流露、高頻開口！</p>
+            <span class="eng-text" style="color: #444; font-style: italic;">We seamlessly integrate the IB Primary Years Programme (IB PYP) framework with three world-class educational apps (Epic!, Seesaw, and Nearpod). Guided by Teacher Bobby's profound patience and personal care, we nurture children's curiosity and encourage them to speak out boldly, helping them cultivate natural English fluency through high-frequency, active interaction!</span>
         </div>
 
-        <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在中央上方的 Join us 迷你智慧按鈕 -->
+        <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在中央上方的 join now 1.png 迷你智慧按鈕 -->
         <div class="last-page-footer-box">
-            <!-- 🎯 迷你點擊按鈕：對接全新上傳之 Join us.png (寬度極致精簡成 135px，垂直居中疊加在 kids.png 頂端上方) -->
+            <!-- 🎯 迷你點擊按鈕：居中疊加在 kids.png 頂端上方 -->
             <div class="join-us-btn-container">
                 <a href="contract.html">
-                    <img src="Join us.png" alt="立即線上簽約鎖定名額" class="cta-join-us-img">
+                    <img src="join now 1.png" alt="立即線上簽約鎖定名額" class="cta-join-us-img">
                 </a>
             </div>
             <!-- 📸 底圖滿版左右填滿 -->
