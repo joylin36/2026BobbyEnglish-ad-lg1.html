@@ -81,7 +81,7 @@
         }
 
         th, td {
-            border: 1px solid var(--uci-blue) !important; /* 🔧 修正指標：強制注入框線重音，確保排版與列印不消失 */
+            border: 1px solid var(--uci-blue) !important; /* 強制注入框線重音，確保排版與列印不消失 */
             padding: 10px;
             vertical-align: middle;
             overflow: hidden;
@@ -353,13 +353,11 @@
             <!-- 📄 【第一階段】優先暴露：計費核定與法規本文 -->
             <div class="section-title">一、選讀班級、科目與學費核定明細 / Course & Billing Details</div>
             
-            <!-- 🔧 修正指標 1：徹底回歸完美咬合的 4 欄 25% 等寬實體框架，外框與內線 100% 清晰絕不移位消失 -->
             <table>
                 <tbody>
                     <tr>
                         <th><span class="zh-title">選讀核定班別</span><span class="en-title">Enrolled Course</span></th>
                         <td>
-                            <!-- 🔮 連動核心：保留選單可切換，預設鎖定在最高頻率的 Let's Go 1 機制 -->
                             <select id="courseSelector" name="就讀班級名稱" class="select-input" onchange="syncCourseBrain()">
                                 <option value="Let's Go 1">Let's Go 1 班 (每週一三五 1:30-3:30 PM)</option>
                                 <option value="Let's Go 2">Let's Go 2 班 (每週一三五 1:30-3:30 PM)</option>
@@ -369,12 +367,13 @@
                                 <option value="Let's Go 6">Let's Go 6 班 (每週一三五 4:30-6:30 PM)</option>
                                 <option value="Advance A1">Advance A1班 (每週三五 4:30-6:30 PM)</option>
                                 <option value="Advance A2">Advance A2班 (每週二四 4:30-6:30 PM)</option>
-                                <option value="Advance B1 新進">Advance B1班 新進方案 (每週二四 7:00-9:00 PM)</option>
-                                <option value="Advance B1 晉升">Advance B1班 晉升方案 (每週二四 7:00-9:00 PM)</option>
-                                <option value="Advance B2 新進">Advance B2班 新進方案 (每週二四 7:00-9:00 PM)</option>
-                                <option value="Advance B2 晉升">Advance B2班 晉升方案 (每週二四 7:00-9:00 PM)</option>
-                                <option value="Advance C1 新進">Advance C1班 新進方案 (每週一 7:00-9:00 PM)</option>
-                                <option value="Advance C1 晉升">Advance C1班 晉升方案 (每週一 7:00-9:00 PM)</option>
+                                <option value="Advance B1 青少年進階美語(新生)">Advance B1 青少年進階美語(新生) (每週二四 7:00-9:00 PM)</option>
+                                <option value="Advance B1 青少年進階美語">Advance B1 青少年進階美語 (每週二四 7:00-9:00 PM)</option>
+                                <option value="Advance B2 青少年進階美語(新生)">Advance B2 青少年進階美語(新生) (每週二四 7:00-9:00 PM)</option>
+                                <option value="Advance B2 青少年進階美語">Advance B2 青少年進階美語 (每週二四 7:00-9:00 PM)</option>
+                                <!-- 👑 修正指標：C1 班級全面正名為「青少年進階美語」，與 B1 高強度一致對齊 -->
+                                <option value="Advance C1 青少年進階美語(新生)">Advance C1 青少年進階美語(新生) (每週一 7:00-9:00 PM)</option>
+                                <option value="Advance C1 青少年進階美語">Advance C1 青少年進階美語 (每週一 7:00-9:00 PM)</option>
                             </select>
                         </td>
                         <th><span class="zh-title">核定修業上課時段</span><span class="en-title">Timetable Schedule</span></th>
@@ -389,16 +388,14 @@
                     <tr>
                         <th><span class="zh-title">(3) 當期學雜費</span><span class="en-title">School Fees</span></th>
                         <td id="td_misc" style="font-weight: bold; color: var(--uci-blue);">-</td>
-                        <th><span class="zh-title">核定繳費總金額</span><span class="en-title">Grand Total</span></th>
+                        <th><span class="zh-title">核定繳費總金額(1)+(2)+(3)</span><span class="en-title">Grand Total (1)+(2)+(3)</span></th>
                         <td id="td_total" style="font-weight: bold; color: #c00; font-size: 14px;">-</td>
                     </tr>
                 </tbody>
             </table>
 
-            <!-- 👑 修正指標 2：改寫章節大標題，剔除不必要的刮號字樣，並執行最精準嚴謹的桃園法規對齊稽查 -->
             <div class="section-title">二、短期補習服務定型化契約應記載條款 / Cram School Services Model Contract Provisions</div>
             
-            <!-- 📜 繁體中文暨專業美語法定 11 大防線全面進駐滾動軸 ── 100% 契合法規 -->
             <div class="legal-box" id="legalBoxContainer">
                 
                 <div class="legal-item">
@@ -431,7 +428,7 @@
                 <div class="legal-item">
                     <strong>第四條：班級編制與實際上課人數上限 / Article 4: Class Size and Legal Capacity Limitations：</strong><br>
                     1. 本班採取精緻小班制教學，實際點名上課人數上限嚴格遵守政府法令規範限制（本班招生人數上限為10人），以確保教學品質與場所公共安全。<br>
-                    <span class="legal-en">1. Exquisite small-class system. The number of students per class shall strictly comply with government regulatory limitations and is strictly capped at 10 students maximum to ensure teaching quality and venue safety.</span>
+                    <span class="legal-en">1. Exquisite small-class system. The maximum number of students enrolled per class shall strictly comply with government regulatory limitations and is strictly capped at 10 students maximum to ensure teaching quality and venue safety.</span>
                 </div>
 
                 <div class="legal-item">
@@ -443,7 +440,7 @@
 
                 <div class="legal-item">
                     <strong>第六條：桃園市法定退費標準 / Article 6: Refund Policy and Regulations (Taoyuan City Standard)：</strong><br>
-                    依據「桃園市短期補習班退費管理自治條例」規範，學員因故離班退費標準嚴格執行如下（補習班應於家長要求退費之日起七日內辦理完畢）：<br>
+                    依據「桃園市短期補習班退費管理自治條例」規範，學員因故離班退費標準條例嚴格執行如下（補習班應於家長要求退費之日起七日內辦理完畢）：<br>
                     (1) 實際開課日前第30日以前要求退費者：退還當期依約繳納費用之總額（100%全退）。<br>
                     (2) 實際開課日前第1日至第29日要求退費者：退還繳納費用總額之百分之九十（90%）。但所扣除金額以新臺幣一千元為限，超過部分仍應退還。<br>
                     (3) 實際開課日起5日內要求退費者：退還依約繳納費用總額之百分之八十（80%）。<br>
@@ -471,7 +468,7 @@
                 <div class="legal-item">
                     <strong>第九條：肖像權合理使用授權與個資隱私安全保護 / Article 9: Portrait Rights and Personal Data Privacy Protection：</strong><br>
                     1. 甲方同意並授權乙方得於常態教學、成果發表或特殊節慶活動中進行拍照與錄影，並得將學員影像合理、不損及名譽地使用於補習班內部學習成果展示、官方網站或招生行銷文宣。<br>
-                    2. 乙方應嚴格遵守《個人資料保護法》規範，甲方所填報之所有個資（包含身分證字號、聯絡手機、居住地址等）僅得用於補習班內部教學行政與安全緊急聯絡，未經書面允許，絕不得洩漏給任何第三人。<br>
+                    2. 乙方應營格遵守《個人資料保護法》規範，甲方所填報之所有個資（包含身分證字號、聯絡手機、居住地址等）僅得用於補習班內部教學行政與安全緊急聯絡，未經書面允許，絕不得洩漏給任何第三人。<br>
                     <span class="legal-en">1. Party A authorizes Party B to take photos and videos during regular classes or holiday events, and reasonably use the images for internal achievement displays or official website promotional marketing, provided it doesn't harm the student's reputation.<br>2. Party B must strictly handle all personal data in full compliance with the Personal Data Protection Act solely for academic administration, safety, and urgent communication. Selling or disclosing data to third parties is strictly prohibited.</span>
                 </div>
 
@@ -577,29 +574,32 @@
 </div>
 
 <script>
-// ===== 2026 巴比美語核定官方原價智慧資料庫（與先前契約內容方式 100% 絕對一致） =====
+// ===== 2026 巴比美語核定官方原價智慧資料庫 =====
 var courseBrainDatabase = {
     "Let's Go 1": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 1 課程 (發音拼讀、生活情境與對話訓練)", content_en: "Let's Go 1 Course (Phonics, situational vocabulary, and interactive dialogues)" },
     "Let's Go 2": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 2 課程 (自然發音進階、生活情境對話、聽說讀寫強化)", content_en: "Let's Go 2 Course (Advanced Phonics, situational dialogues, and 4-skills intensive training)" },
     "Let's Go 3": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 3 課程 (中英雙語進度教學、語法感知引導、初階閱讀)", content_en: "Let's Go 3 Course (Bilingual progression, introductory reading, and early grammar syntax)" },
     "Let's Go 4": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 4 課程 (中英雙語進度教學、語法感知引導、進階閱讀)", content_en: "Let's Go 4 Course (Bilingual progression, intermediate reading, and analytical grammar)" },
-    "Let's Go 5": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 5 課程 (高階全方位美語、學術讀寫引導、主題簡報討論)", content_en: "Let's Go 5 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
-    "Let's Go 6": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 6 課程 (高階全方位美語、學術讀寫引導、主題簡報討論)", content_en: "Let's Go 6 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
+    "Let's Go 5": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 5 課程 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 5 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
+    "Let's Go 6": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 6 課程 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 6 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
     "Advance A1": { tuition: 26180, materials: 2966, misc: 2040, total: 31186, schedule: "每週三五 4:30 - 6:30 PM (共51堂)", content_zh: "Advance A1 兒童進階美語班 特調班", content_en: "Advance A1 Junior Advanced Special Program" },
     "Advance A2": { tuition: 29260, materials: 3826, misc: 2280, total: 35366, schedule: "每週二四 4:30 - 6:30 PM (共51堂)", content_zh: "Advance A2 兒童進階美語班進度班", content_en: "Advance A2 Junior Advanced Progression Program" },
-    "Advance B1 新進": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B1 青少年進階美語 (新進方案)", content_en: "Advance B1 Teen Advanced Program (Standard Enrollment)" },
-    "Advance B1 晉升": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B1 青少年進階美語 (晉升方案)", content_en: "Advance B1 Teen Advanced Program (Internal Promotion)" },
-    "Advance B2 新進": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B2 青少年進階美語 (新進方案)", content_en: "Advance B2 Teen Advanced Program (Standard Enrollment)" },
-    "Advance B2 晉升": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B2 青少年進階美語 (晉升方案)", content_en: "Advance B2 Teen Advanced Program (Internal Promotion)" },
-    "Advance C1 新進": { tuition: 14450, materials: 1840, misc: 850, total: 17140, schedule: "每週一 7:00 - 9:00 PM (共51堂)", content_zh: "Advance C1 青少年最高殿堂 (新進方案)", content_en: "Advance C1 Teen Highest Academy (Standard Enrollment)" },
-    "Advance C1 晉升": { tuition: 14450, materials: 500, misc: 850, total: 15800, schedule: "每週一 7:00 - 9:00 PM (共51堂)", content_zh: "Advance C1 青少年最高殿堂 (晉升方案)", content_en: "Advance C1 Teen Highest Academy (Internal Promotion)" }
+    
+    "Advance B1 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B1 青少年進階美語 (新生方案)", content_en: "Advance B1 Teen Advanced Program (Freshman Plan)" },
+    "Advance B1 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B1 青少年進階美語 (常規方案)", content_en: "Advance B1 Teen Advanced Program (Regular Plan)" },
+    "Advance B2 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B2 青少年進階美語 (新生方案)", content_en: "Advance B2 Teen Advanced Program (Freshman Plan)" },
+    "Advance B2 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B2 青少年進階美語 (常規方案)", content_en: "Advance B2 Teen Advanced Program (Regular Plan)" },
+    
+    // 👑 最終修正指標：C1 班級後台大腦資料庫鍵值同步正名為「青少年進階美語」，大功告成！
+    "Advance C1 青少年進階美語(新生)": { tuition: 14450, materials: 1840, misc: 850, total: 17140, schedule: "每週一 7:00 - 9:00 PM (共51堂)", content_zh: "Advance C1 青少年進階美語 (新生方案)", content_en: "Advance C1 Teen Advanced Program (Freshman Plan)" },
+    "Advance C1 青少年進階美語": { tuition: 14450, materials: 500, misc: 850, total: 15800, schedule: "每週一 7:00 - 9:00 PM (共51堂)", content_zh: "Advance C1 青少年進階美語 (常規方案)", content_en: "Advance C1 Teen Advanced Program (Regular Plan)" }
 };
 
 // ===== HTML5 觸控手寫簽名核心引擎 =====
 var canvas = document.getElementById('sigPad');
 var ctx = canvas.getContext('2d');
 var isDrawing = false;
-var hasSigned = false; // 🔒 智慧防呆遮罩解鎖天線
+var hasSigned = false;
 
 function resizeCanvas() {
     canvas.width = canvas.parentElement.clientWidth;
@@ -640,13 +640,12 @@ function clearSigPad() {
     hasSigned = false;
 }
 
-// ===== 萬用智慧連動與動態報名表計費覆蓋晶片（100% 執行跨章節動態注入大腦） =====
+// ===== 萬用智慧連動與動態報名表計費覆蓋晶片 =====
 function syncCourseBrain() {
     var courseKey = document.getElementById('courseSelector').value;
     var data = courseBrainDatabase[courseKey];
     
     if(data) {
-        // 📡 檢查 URL 天線覆蓋參數
         var urlParams = new URLSearchParams(window.location.search);
         var customTuition = urlParams.get('tuition');
         var customMaterials = urlParams.get('materials');
@@ -657,26 +656,22 @@ function syncCourseBrain() {
         var finalMisc = customMisc ? parseInt(customMisc) : data.misc;
         var finalTotal = finalTuition + finalMaterials + finalMisc;
 
-        // 1. 刷新第一大項「收費明細」傳統方格內容
         document.getElementById('td_schedule').innerText = data.schedule;
         document.getElementById('td_tuition').innerText = "NT$ " + finalTuition.toLocaleString() + " 元";
         document.getElementById('td_materials').innerText = "NT$ " + finalMaterials.toLocaleString() + " 元";
         document.getElementById('td_misc').innerText = "NT$ " + finalMisc.toLocaleString() + " 元";
         document.getElementById('td_total').innerText = "NT$ " + finalTotal.toLocaleString() + " 元";
         
-        // 🔮 修正指標核心：下方法規中提到班級與科目的地方，全自動同步拉引變更！
         document.getElementById('legal_course_title_zh').innerText = courseKey;
         document.getElementById('legal_course_title_en').innerText = courseKey;
         document.getElementById('legal_course_content_zh').innerText = data.content_zh;
         document.getElementById('legal_course_content_en').innerText = data.content_en;
         
-        // 2. 行政隱藏備份天線連動更新
         document.getElementById('hidden_tuition').value = finalTuition + " 元";
         document.getElementById('hidden_materials').value = finalMaterials + " 元";
         document.getElementById('hidden_misc').value = finalMisc + " 元";
         document.getElementById('hidden_schedule').value = data.schedule;
         
-        // 3. 自動更新回傳主旨
         document.getElementById('formSubject').value = "【二合一智慧合約】私立巴比美語 (" + courseKey + ") 定型化契約線上回傳";
     }
 }
@@ -699,12 +694,13 @@ function decodeUrlParams() {
             case 'LG6': targetValue = "Let's Go 6"; break;
             case 'ADV_A1': targetValue = "Advance A1"; break;
             case 'ADV_A2': targetValue = "Advance A2"; break;
-            case 'ADV_B1_NEW': targetValue = "Advance B1 新進"; break;
-            case 'ADV_B1_UP': targetValue = "Advance B1 晉升"; break;
-            case 'ADV_B2_NEW': targetValue = "Advance B2 新進"; break;
-            case 'ADV_B2_UP': targetValue = "Advance B2 晉升"; break;
-            case 'ADV_C1_NEW': targetValue = "Advance C1 新進"; break;
-            case 'ADV_C1_UP': targetValue = "Advance C1 晉升"; break;
+            case 'ADV_B1_NEW': targetValue = "Advance B1 青少年進階美語(新生)"; break;
+            case 'ADV_B1_UP': targetValue = "Advance B1 青少年進階美語"; break;
+            case 'ADV_B2_NEW': targetValue = "Advance B2 青少年進階美語(新生)"; break;
+            case 'ADV_B2_UP': targetValue = "Advance B2 青少年進階美語"; break;
+            // 👑 天線解碼接收端同步對齊 C1 新旗艦正名
+            case 'ADV_C1_NEW': targetValue = "Advance C1 青少年進階美語(新生)"; break;
+            case 'ADV_C1_UP': targetValue = "Advance C1 青少年進階美語"; break;
         }
         
         if (targetValue) {
@@ -791,7 +787,7 @@ window.onload = function() {
     document.getElementById('currentDateDisplay').innerText = today.getFullYear() + " 年 " + (today.getMonth() + 1) + " 月 " + today.getDate() + " 日";
     
     decodeUrlParams();
-    syncCourseBrain(); // 🟢 啟動主機時，立刻自動對齊加載一次！
+    syncCourseBrain();
 };
 </script>
 </body>
