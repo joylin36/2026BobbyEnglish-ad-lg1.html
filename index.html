@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!-- 🎯 全載具核心天線：確保行動裝置與 A4 紙張列印排版 100% 完美自適應 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>私立巴比美語短期補習班 | 學員報名暨定型化契約書</title>
+    <title>私立巴比美語短期補習班 | Let's Go 1 報名表暨服務契約書</title>
     <style>
         :root {
             --uci-blue: #1b3d6d;
@@ -70,7 +70,7 @@
             display: inline-block;
         }
 
-        /* 🔒 守護方格地基 */
+        /* 🔒 守護方格地基：死死鎖定傳統表格排版，table-layout: fixed 強制四列等寬 */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -83,13 +83,15 @@
             border: 1px solid var(--uci-blue);
             padding: 8px;
             vertical-align: middle;
+            overflow: hidden;
+            word-wrap: break-word;
         }
 
         th {
             background-color: #f0f4f8;
             color: var(--uci-blue);
             text-align: center; 
-            width: 22%;
+            width: 25%; /* 🔧 剛性校正：四欄完美等寬分配 25%，徹底破除大位移 */
             font-weight: bold;
             line-height: 1.4;
         }
@@ -109,6 +111,7 @@
         td {
             position: relative;
             text-align: left;
+            width: 25%; /* 🔧 剛性校正：與 th 格子權重 100% 絕對咬合 */
         }
 
         .text-input, .static-course-display {
@@ -300,6 +303,8 @@
             .canvas-clear-btn, .submit-btn-container, .magic-next-container { display: none !important; }
             .signature-canvas-container { border: 1px solid var(--uci-blue); }
             th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { width: 25% !important; }
+            td { width: 25% !important; }
         }
 
         @media (max-width: 768px) {
@@ -307,6 +312,7 @@
             .page { padding: 25px 15px; }
             .page-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
             table { width: 800px; } 
+            th, td { width: auto !important; }
         }
     </style>
 </head>
@@ -329,7 +335,9 @@
         <div class="page">
             <div class="contract-header">
                 <h1>私立巴比美語短期補習班 ｜ 短期補習服務契約書</h1>
-                <h2>Let's Go 1 專屬智慧報名暨服務契約書 (二合一折疊魔術完全體)</h2>
+                <!-- 👑 修正指標 1：改寫大標題並加載官方核定雙語解說副標題 -->
+                <h2>Let's Go 1 報名表暨服務契約書</h2>
+                <h2 style="font-size: 13.5px; font-weight: bold; margin-top: 4px; opacity: 0.9;">Let's Go 1 Enrollment Form & Short-Term Cram School Services Contract</h2>
                 <p style="font-size: 11px; color: #666; margin: 10px 0 0 0;">(依據教育部短期補習班補習服務契約書範本與桃園市最新設立及管理法規制定-2026年9月最新核定版)</p>
             </div>
 
@@ -342,24 +350,26 @@
 
             <!-- 📄 【第一階段】優先暴露：計費核定與法規本文 -->
             <div class="section-title">一、選讀班級、科目與學費核定明細 / Course & Billing Details</div>
+            
+            <!-- 🔧 修正指標 2：全對稱四欄 25% 鋼鐵結構表格，徹底終結位移走樣問題 -->
             <table>
                 <tbody>
                     <tr>
                         <th><span class="zh-title">選讀核定班別</span><span class="en-title">Enrolled Course</span></th>
-                        <td class="static-course-display" style="font-size: 14px; font-weight: bold;">Let's Go 1 美語不害怕!巴比老師的遊戲大膽說1級班</td>
-                        <th><span class="zh-title">標準修業上課時段</span><span class="en-title"> Timetable</span></th>
-                        <td style="font-size: 11.5px; font-weight: bold; color: var(--uci-blue);">每週星期一、三、五 下午 1:30 - 3:30 p.m. (共 51 堂)</td>
+                        <td class="static-course-display" style="font-size: 13px;">Let's Go 1 進度班</td>
+                        <th><span class="zh-title">標準上課時段</span><span class="en-title">Timetable</span></th>
+                        <td style="font-size: 11.5px; font-weight: bold; color: var(--uci-blue);">每週一三五 1:30 - 3:30 PM (共51堂)</td>
                     </tr>
                     <tr>
-                        <th><span class="zh-title">(1) 學費 Tuition</span></th>
-                        <td style="font-weight: bold;">NT$ 31,620 元</td>
-                        <th><span class="zh-title">(2) 講義教材費 Materials</span></th>
-                        <td style="font-weight: bold;">NT$ 1,268 元</td>
+                        <th><span class="zh-title">(1) 學費</span><span class="en-title">Tuition Fee</span></th>
+                        <td style="font-weight: bold; color: var(--uci-blue);">NT$ 31,620 元</td>
+                        <th><span class="zh-title">(2) 講義教材費</span><span class="en-title">Materials Fee</span></th>
+                        <td style="font-weight: bold; color: var(--uci-blue);">NT$ 1,268 元</td>
                     </tr>
                     <tr>
-                        <th><span class="zh-title">(3) 當期學雜費 Misc</span></th>
-                        <td style="font-weight: bold;">NT$ 3,060 元</td>
-                        <th><span class="zh-title">核定繳費總金額 Grand Total</span></th>
+                        <th><span class="zh-title">(3) 當期學雜費</span><span class="en-title">School Fees</span></th>
+                        <td style="font-weight: bold; color: var(--uci-blue);">NT$ 3,060 元</td>
+                        <th><span class="zh-title">核定繳費總金額</span><span class="en-title">Grand Total</span></th>
                         <td style="font-weight: bold; color: #c00; font-size: 14px;">NT$ 35,948 元</td>
                     </tr>
                 </tbody>
@@ -379,7 +389,7 @@
                 <div class="legal-item">
                     <strong>第一條：修業班別與班級性質 / Article 1: Course and Program Enrollment Type：</strong><br>
                     1. 本契約核定就讀班級為 Let's Go 1 基礎常態進度班。<br>
-                    2. 本課程屬一般系統化正規美語教學進度班，非屬保證班（無特定考取承諾、無退費退分擔保或保證期間承諾）。<br>
+                    2. 本課程屬一般系統化正規美語教學進度班，非屬保證班（無特定考取承諾、無退費退分擔保 or 保證期間承諾）。<br>
                     <span class="legal-en">1. The approved program under this contract is the standard "Let's Go 1 Foundational Progression Class."<br>2. This course is a regular systematic progression program and is NOT a "guaranteed success" or "warranty" program (No promises of passing specific exams or special refund-guarantee warranties shall apply).</span>
                 </div>
 
@@ -416,7 +426,7 @@
                     (1) 實際開課日前第30日以前要求退費者：退還當期依約繳納費用之總額（100%全退）。<br>
                     (2) 實際開課日前第1日至第29日要求退費者：退還繳納費用總額之百分之九十（90%）。但所扣除金額以新臺幣一千元為限，超過部分仍應退還。<br>
                     (3) 實際開課日起5日內要求退費者：退還依約繳納費用總額之百分之八十（80%）。<br>
-                    (4) 實際開課日起第六日，至全期或總課程時數之三分之一期間內要求退費者：退還依約繳納費用總額之百分之五十（50%）。<br>
+                    (4) 實際開課日起第六日，至全期或總課程時數之三分之一期間內要求退費者：退還依約繳納費用總額之百分之心理（50%）。<br>
                     (5) 已逾全期或總課程時數之三分之一者：所收取之當期費用得全數不予退還。<br>
                     (6) 代辦之教材費若已購置並已發放予甲方者，該項目不予退還，教材歸甲方所有。<br>
                     <span class="legal-en">In accordance with the Taoyuan City Cram School Refund Regulations, refunds shall be processed within 7 days based on the following:<br>(1) Requested 30 days or more before start date: Full 100% refund of total fees paid.<br>(2) Requested within 1 to 29 days before start date: 90% refund of total fees paid (the amount retained by school is capped at NT$1,000, excess must be refunded).<br>(3) Requested within 5 days from the start date: 80% refund of total fees paid.<br>(4) Requested from the 6th day until 1/3 of total course term: 50% refund of total fees paid.<br>(5) Requested after 1/3 of total course term: Fees collected may be entirely non-refundable.<br>(6) Issued materials or textbooks are non-refundable and belong to the student.</span>
@@ -597,16 +607,19 @@ function unlockHiddenForm() {
     blank.width = canvas.width;
     blank.height = canvas.height;
     
+    // 🎯 智慧防空簽安全雷達：驗證畫布有沒有留下筆跡
     if (!hasSigned || canvas.toDataURL() === blank.toDataURL()) {
         alert("⚠️ 智慧防呆提示：家長/監護人必須先在上方白色方框內完成「親筆手寫電子簽章」，才能解鎖填寫基本資料喔！\nPlease sign the contract first.");
         document.getElementById('sigLabelLink').scrollIntoView({ behavior: 'smooth' });
         return;
     }
     
+    // 🟢 驗證通過：解鎖滑出基本資料表單，並隱藏過渡鈕
     var hiddenSection = document.getElementById('hiddenFormSection');
     hiddenSection.style.display = 'block';
     document.getElementById('nextTriggerBtnBlock').style.display = 'none';
     
+    // 鎖定表單欄位為必填，防止家長開溜空包彈
     var inputs = hiddenSection.querySelectorAll('.text-input');
     inputs.forEach(function(input) {
         if(input.name !== 'school' && input.name !== 'grade' && input.name !== 'line_id') {
@@ -614,6 +627,7 @@ function unlockHiddenForm() {
         }
     });
     
+    // 優雅向下滑動，對齊基本資料表抬頭
     hiddenSection.scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -629,6 +643,7 @@ function prepareSubmit(event) {
         return false;
     }
     
+    // 🔒 終極防偷溜安全網：在最終送出時再次全面盤點並強制執行必填欄位驗證
     var hiddenSection = document.getElementById('hiddenFormSection');
     var inputs = hiddenSection.querySelectorAll('.text-input');
     var formValid = true;
@@ -642,6 +657,7 @@ function prepareSubmit(event) {
         }
     });
     
+    // 檢查性別單選鈕是否有勾選
     var genderChecked = document.querySelector('input[name="gender"]:checked');
     if(!genderChecked) {
         formValid = false;
@@ -654,6 +670,7 @@ function prepareSubmit(event) {
         return false;
     }
     
+    // 將簽名畫布一秒氣化為 Base64 鋼鐵代碼字串存入隱藏欄位
     document.getElementById('signature_base64').value = canvas.toDataURL();
     
     document.getElementById('submitBtn').innerText = "正傳送至 Joy 主任審查核定夾...";
