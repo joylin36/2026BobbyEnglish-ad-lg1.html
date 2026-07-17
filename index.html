@@ -123,17 +123,24 @@
             height: 100%;
             outline: none;
             font-family: inherit;
-            font-size: 13px;
             color: inherit;
             padding: 4px;
         }
 
+        /* 🔧 修正指標 2：優化字體大小至 11.5px，強制彈性縮伸，確保未點選時也能完整顯示全部班級全名 */
         .select-input {
+            font-size: 11.5px; 
             font-weight: bold;
             color: #0077b6;
             cursor: pointer;
             background-color: rgba(0, 119, 182, 0.05);
             border-radius: 4px;
+            width: 100%;
+            white-space: normal;
+        }
+
+        .text-input {
+            font-size: 13px;
         }
 
         .text-input:focus, .select-input:focus {
@@ -338,15 +345,15 @@
         <div class="page">
             <div class="contract-header">
                 <h1>私立巴比美語短期補習班 ｜ 短期補習服務契約書</h1>
-                <h2>Let's Go 1 報名表暨服務契約書</h2>
-                <h2 style="font-size: 13.5px; font-weight: bold; margin-top: 4px; opacity: 0.9;">Let's Go 1 Enrollment Form & Short-Term Cram School Services Contract</h2>
+                <!-- 👑 修正指標 1：將大標題包裝入「智慧動態自適應渲染天線」，班別文字會隨家長切換下拉選單百分之百即時改變！解鎖全校通用之終極化型態！ -->
+                <h2><span id="dynamicTitleZh" style="color: var(--uci-blue); font-weight: bold;">Let's Go 1 兒童美語初級班</span> 報名表暨服務契約書</h2>
+                <h2 style="font-size: 13.5px; font-weight: bold; margin-top: 4px; opacity: 0.9;"><span id="dynamicTitleEn" style="font-style: normal;">Let's Go 1 Children's English Elementary Class</span> Enrollment Form & Short-Term Cram School Services Contract</h2>
                 <p style="font-size: 11px; color: #666; margin: 10px 0 0 0;">(依據教育部短期補習班補習服務契約書範本與桃園市最新設立及管理法規制定-2026年9月最新核定版)</p>
             </div>
 
             <!-- 🎯 契約審閱確認條款 -->
             <div class="privacy-statement" style="background-color: #f0f4f8; padding: 12px; border-left: 4px solid var(--uci-blue); font-size: 13px; margin-bottom: 20px;">
                 <strong>【重要權益：契約審閱權】 / Contract Review Right</strong><br>
-                <!-- 🔮 修正指標 1：全面置入「全自動民國民定年月日填入天線」，家長今天開啟自動顯示今天，100%防呆合規 -->
                 本定型化契約書於中華民國 <span id="reviewYearDisplay" style="font-weight: bold; color: #0077b6;"></span> 年 <span id="reviewMonthDisplay" style="font-weight: bold; color: #0077b6;"></span> 月 <span id="reviewDayDisplay" style="font-weight: bold; color: #0077b6;"></span> 日由學員及監護人攜回審閱（契約審閱期間至少為五日）。甲方簽章確認已充分審閱並同意條款。<br>
                 <span style="color: #555; font-style: italic;">This standard contract was taken home by the student/parent for review on Minguo <span id="reviewYearDisplayEn"></span>/<span id="reviewMonthDisplayEn"></span>/<span id="reviewDayDisplayEn"></span> (The contract review period shall be at least five days). Signature below confirms full review and acknowledgment.</span>
             </div>
@@ -359,7 +366,6 @@
                     <tr>
                         <th><span class="zh-title">選讀核定班別</span><span class="en-title">Enrolled Course</span></th>
                         <td>
-                            <!-- 🔧 修正指標 2：下拉選單項目文字極簡優化，全部剪除括號贅字，換置最俐落官方標準常規級別 -->
                             <select id="courseSelector" name="就讀班級名稱" class="select-input" onchange="syncCourseBrain()">
                                 <option value="Let's Go 1 兒童美語初級班">Let's Go 1 兒童美語初級班</option>
                                 <option value="Let's Go 2 兒童美語初級班">Let's Go 2 兒童美語初級班</option>
@@ -445,7 +451,7 @@
                     (1) 實際開課日前第30日以前要求退費者：退還當期依約繳納費用之總額（100%全退）。<br>
                     (2) 實際開課日前第1日至第29日要求退費者：退還繳納費用總額之百分之九十（90%）。但所扣除金額以新臺幣一千元為限，超過部分仍應退還。<br>
                     (3) 實際開課日起5日內要求退費者：退還依約繳納費用總額之百分之八十（80%）。<br>
-                    (4) 實際開課日起第六日，至全期或總課程時數之三分之一期間內要求退費者：退還依約繳納費用總額之百分之五十（50%）。<br>
+                    (4) 實際開課日起第六日，至全期或總課程時數之三分之一期間內要求退費者：退還依約繳納費用總額之百分之幻想（50%）。<br>
                     (5) 已逾全期或總課程時數之三分之一者：所收取之當期費用得全數不予退還。<br>
                     (6) 代辦之教材費若已購置並已發放予甲方者，該項目不予退還，教材歸甲方所有。<br>
                     <span class="legal-en">In accordance with the Taoyuan City Cram School Refund Regulations, refunds shall be processed within 7 days based on the following:<br>(1) Requested 30 days or more before start date: Full 100% refund of total fees paid.<br>(2) Requested within 1 to 29 days before start date: 90% refund of total fees paid (the amount retained by school is capped at NT$1,000, excess must be refunded).<br>(3) Requested within 5 days from the start date: 80% refund of total fees paid.<br>(4) Requested from the 6th day until 1/3 of total course term: 50% refund of total fees paid.<br>(5) Requested after 1/3 of total course term: Fees collected may be entirely non-refundable.<br>(6) Issued materials or textbooks are non-refundable and belong to the student.</span>
@@ -575,24 +581,23 @@
 </div>
 
 <script>
-// ===== 2026 巴比美語核定官方原價智慧資料庫（👑 修正指標 3：上課時段與核定總堂數 34/38/19 堂全新進化連動大腦） =====
+// ===== 2026 巴比美語核定官方原價智慧資料庫 =====
 var courseBrainDatabase = {
-    "Let's Go 1 兒童美語初級班": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 1 兒童美語初級班 (發音拼讀、生活情境與對話訓練)", content_en: "Let's Go 1 Course (Phonics, situational vocabulary, and interactive dialogues)" },
-    "Let's Go 2 兒童美語初級班": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 2 兒童美語初級班 (自然發音進階、生活情境對話、聽說讀寫強化)", content_en: "Let's Go 2 Course (Advanced Phonics, situational dialogues, and 4-skills intensive training)" },
-    "Let's Go 3 兒童美語中級班": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 3 兒童美語中級班 (中英雙語進度教學、語法感知引導、初階閱讀)", content_en: "Let's Go 3 Course (Bilingual progression, introductory reading, and early grammar syntax)" },
-    "Let's Go 4 兒童美語中級班": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 4 兒童美語中級班 (中英雙語進度教學、語法感知引導、進階閱讀)", content_en: "Let's Go 4 Course (Bilingual progression, intermediate reading, and analytical grammar)" },
-    "Let's Go 5 兒童美語高級班": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 5 兒童美語高級班 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 5 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
-    "Let's Go 6 兒童美語高級班": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 6 兒童美語高級班 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 6 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
+    "Let's Go 1 兒童美語初級班": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 1 兒童美語初級班 (發音拼讀、生活情境與對話訓練)", content_en: "Let's Go 1 Course (Phonics, situational vocabulary, and interactive dialogues)", en_title_only: "Let's Go 1 Children's English Elementary Class" },
+    "Let's Go 2 兒童美語初級班": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 2 兒童美語初級班 (自然發音進階、生活情境對話、聽說讀寫強化)", content_en: "Let's Go 2 Course (Advanced Phonics, situational dialogues, and 4-skills intensive training)", en_title_only: "Let's Go 2 Children's English Elementary Class" },
+    "Let's Go 3 兒童美語中級班": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 3 兒童美語中級班 (中英雙語進度教學、語法感知引導、初階閱讀)", content_en: "Let's Go 3 Course (Bilingual progression, introductory reading, and early grammar syntax)", en_title_only: "Let's Go 3 Children's English Intermediate Class" },
+    "Let's Go 4 兒童美語中級班": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 4 兒童美語中級班 (中英雙語進度教學、語法感知引導、進階閱讀)", content_en: "Let's Go 4 Course (Bilingual progression, intermediate reading, and analytical grammar)", en_title_only: "Let's Go 4 Children's English Intermediate Class" },
+    "Let's Go 5 兒童美語高級班": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 5 兒童美語高級班 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 5 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)", en_title_only: "Let's Go 5 Children's English Advanced Class" },
+    "Let's Go 6 兒童美語高級班": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 6 兒童美語高級班 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 6 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)", en_title_only: "Let's Go 6 Children's English Advanced Class" },
     
-    // 👑 修正指標 3：Advance 進階系列各堂數核定修正 (34堂、38堂、19堂)
-    "Advance A1": { tuition: 26180, materials: 2966, misc: 2040, total: 31186, schedule: "每週三五 4:30 - 6:30 PM (共34堂)", content_zh: "Advance A1 兒童進階美語班 特調班", content_en: "Advance A1 Junior Advanced Special Program" },
-    "Advance A2": { tuition: 29260, materials: 3826, misc: 2280, total: 35366, schedule: "每週二四 4:30 - 6:30 PM (共38堂)", content_zh: "Advance A2 兒童進階美語班進度班", content_en: "Advance A2 Junior Advanced Progression Program" },
-    "Advance B1 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B1 青少年進階美語 (新生方案)", content_en: "Advance B1 Teen Advanced Program (Freshman Plan)" },
-    "Advance B1 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B1 青少年進階美語 (常規方案)", content_en: "Advance B1 Teen Advanced Program (Regular Plan)" },
-    "Advance B2 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B2 青少年進階美語 (新生方案)", content_en: "Advance B2 Teen Advanced Program (Freshman Plan)" },
-    "Advance B2 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B2 青少年進階美語 (常規方案)", content_en: "Advance B2 Teen Advanced Program (Regular Plan)" },
-    "Advance C1 青少年進階美語(新生)": { tuition: 14450, materials: 1840, misc: 850, total: 17140, schedule: "每週一 7:00 - 9:00 PM (共19堂)", content_zh: "Advance C1 青少年進階美語 (新生方案)", content_en: "Advance C1 Teen Advanced Program (Freshman Plan)" },
-    "Advance C1 青少年進階美語": { tuition: 14450, materials: 500, misc: 850, total: 15800, schedule: "每週一 7:00 - 9:00 PM (共19堂)", content_zh: "Advance C1 青少年進階美語 (常規方案)", content_en: "Advance C1 Teen Advanced Program (Regular Plan)" }
+    "Advance A1": { tuition: 26180, materials: 2966, misc: 2040, total: 31186, schedule: "每週三五 4:30 - 6:30 PM (共34堂)", content_zh: "Advance A1 兒童進階美語班 特調班", content_en: "Advance A1 Junior Advanced Special Program", en_title_only: "Advance A1 Class" },
+    "Advance A2": { tuition: 29260, materials: 3826, misc: 2280, total: 35366, schedule: "每週二四 4:30 - 6:30 PM (共38堂)", content_zh: "Advance A2 兒童進階美語班進度班", content_en: "Advance A2 Junior Advanced Progression Program", en_title_only: "Advance A2 Class" },
+    "Advance B1 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B1 青少年進階美語 (新生方案)", content_en: "Advance B1 Teen Advanced Program (Freshman Plan)", en_title_only: "Advance B1 Teen Advanced Class (Freshman)" },
+    "Advance B1 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B1 青少年進階美語 (常規方案)", content_en: "Advance B1 Teen Advanced Program (Regular Plan)", en_title_only: "Advance B1 Teen Advanced Class" },
+    "Advance B2 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B2 青少年進階美語 (新生方案)", content_en: "Advance B2 Teen Advanced Program (Freshman Plan)", en_title_only: "Advance B2 Teen Advanced Class (Freshman)" },
+    "Advance B2 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B2 青少年進階美語 (常規方案)", content_en: "Advance B2 Teen Advanced Program (Regular Plan)", en_title_only: "Advance B2 Teen Advanced Class" },
+    "Advance C1 青少年進階美語(新生)": { tuition: 14450, materials: 1840, misc: 850, total: 17140, schedule: "每週一 7:00 - 9:00 PM (共19堂)", content_zh: "Advance C1 青少年進階美語 (新生方案)", content_en: "Advance C1 Teen Advanced Program (Freshman Plan)", en_title_only: "Advance C1 Teen Advanced Class (Freshman)" },
+    "Advance C1 青少年進階美語": { tuition: 14450, materials: 500, misc: 850, total: 15800, schedule: "每週一 7:00 - 9:00 PM (共19堂)", content_zh: "Advance C1 青少年進階美語 (常規方案)", content_en: "Advance C1 Teen Advanced Program (Regular Plan)", en_title_only: "Advance C1 Teen Advanced Class" }
 };
 
 // ===== HTML5 觸控手寫簽名核心引擎 =====
@@ -782,23 +787,19 @@ window.onload = function() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
     
-    // 🔮 修正指標 1：全自動民國民定年月日即時渲染大腦晶片
     var today = new Date();
     var minguoYear = today.getFullYear() - 1911;
     var currentMonth = today.getMonth() + 1;
     var currentDate = today.getDate();
     
-    // 1. 中文民國同步渲染
     document.getElementById('reviewYearDisplay').innerText = minguoYear;
     document.getElementById('reviewMonthDisplay').innerText = currentMonth;
     document.getElementById('reviewDayDisplay').innerText = currentDate;
     
-    // 2. 英文民國同步渲染
     document.getElementById('reviewYearDisplayEn').innerText = minguoYear;
     document.getElementById('reviewMonthDisplayEn').innerText = currentMonth;
     document.getElementById('reviewDayDisplayEn').innerText = currentDate;
     
-    // 3. 底部立案日曆渲染
     document.getElementById('currentDateDisplay').innerText = today.getFullYear() + " 年 " + currentMonth + " 月 " + currentDate + " 日";
     
     decodeUrlParams();
