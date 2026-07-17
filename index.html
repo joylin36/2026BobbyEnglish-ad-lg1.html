@@ -4,480 +4,593 @@
     <meta charset="UTF-8">
     <!-- 🎯 全載具核心天線：確保行動裝置與 A4 紙張列印排版 100% 完美自適應 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Let's Go 1 課程介紹 | Course Introduction</title>
+    <title>私立巴比美語短期補習班 | 學員報名暨定型化契約書</title>
     <style>
         :root {
             --uci-blue: #1b3d6d;
             --uci-gold: #fecc07;
-            --pyp-teal: #0077b6;
-            --soft-red: #e74c3c; /* 🎨 還原為第一次大紅底色時的溫暖亮紅色 */
-            --dark-red: #c0392b;
+            --soft-red: #e74c3c;
         }
-
+        
         * {
             box-shadow: none;
             box-sizing: border-box;
             font-family: 'Helvetica Neue', Helvetica, Arial, 'Noto Sans TC', 'Microsoft JhengHei', '微軟正黑體', sans-serif;
         }
 
-        body { 
-            background-color: #f4f7f6; 
-            margin: 0; 
-            padding: 20px 0; 
-            color: #333; 
-            line-height: 1.4; 
-        }
-
-        .ad-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        /* 📄 剛性分頁與頁面保護晶片 ── 確保 A4 物理比例 */
-        .page { 
-            position: relative;
-            background: #fff;
-            padding: 30px 40px 0 40px; /* 底部留白交給 kids.png 貼滿 */
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 1020px; /* 線上網頁模擬標準 A4 的黃金高度 */
-        }
-
-        .page-content {
-            flex: 1;
-        }
-
-        /* 🚀 第一頁：經典紅底底色背景與 Logo 左右並排艙 ── 100% 經典還原 */
-        .header-flex-box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            margin-bottom: 25px;
-            background-color: var(--soft-red);
-            padding: 20px 25px;
-            border-radius: 6px;
-        }
-
-        /* 🎯 標題文字區塊：文字置中 */
-        .title-group {
-            flex: 1;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        /* 🎨 經典還原：字的顏色比照黃金與亮白配色表現 */
-        .title-group h1 { 
-            margin: 0 0 8px 0; 
-            font-size: 24px; 
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-        }
-
-        .title-group h1 span.main-title { 
-            color: var(--uci-gold); 
-            font-weight: bold; 
-        }
-
-        .title-group h1 span.sub-title { 
-            font-size: 0.6em; 
-            color: #fff; 
-            font-weight: bold; 
-            margin-left: 8px;
-        }
-
-        .title-group h3 {
-            color: #fff; 
-            margin: 5px 0;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 1.4;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-        }
-
-        .title-group h3.eng-sub { 
-            font-size: 12.5px; 
-            color: var(--uci-gold); 
-            margin-bottom: 0;
-            font-style: italic;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
-        }
-
-        /* 巴比專屬置右去背 Logo ── 100% 經典還原，完全不變動 */
-        .logo-img {
-            width: 100%;
-            max-width: 160px;
-            height: auto;
-            object-fit: contain;
-            flex-shrink: 0;
-            background-color: transparent;
-        }
-
-        h2 { 
-            color: #2c3e50; 
-            border-bottom: 2px solid var(--soft-red); 
-            padding-bottom: 4px; 
-            margin-top: 20px; 
-            margin-bottom: 12px; 
-            font-size: 17px;
-        }
-
-        p {
-            font-size: 13px;
-            margin: 0 0 8px 0;
-            text-align: justify;
-        }
-
-        /* 💡 課程號角看板（整段置中） */
-        .pyp-badge {
-            background-color: transparent;
-            border-left: none; 
-            padding: 5px 15px;
-            margin: 20px 0;
-            border-radius: 0;
-            text-align: center; 
-        }
-
-        .pyp-badge h4 {
-            margin: 0 0 6px 0;
-            color: var(--soft-red);
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 1.4;
-            text-align: center;
-        }
-
-        .pyp-badge p {
-            margin: 0 0 6px 0;
-            font-size: 13.5px;
+        body {
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
             color: #333;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        /* 🔒 剛性方格表格地基 */
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 15px; 
-            margin-bottom: 25px; 
-            font-size: 13px;
-            table-layout: fixed;
-            word-wrap: break-word;
-        }
-
-        th, td { 
-            border: 1px solid #bdc3c7; 
-            padding: 10px; 
-            vertical-align: middle; 
-            text-align: left; 
             line-height: 1.5;
         }
 
-        th { 
-            background-color: #fdebd0; 
-            color: var(--soft-red); 
-            text-align: center; 
+        .page-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        .page {
+            padding: 40px 50px;
+        }
+
+        .contract-header {
+            text-align: center;
+            border-bottom: 3px double var(--uci-blue);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contract-header h1 {
+            color: var(--uci-blue);
+            font-size: 23px;
+            margin: 0 0 5px 0;
             font-weight: bold;
         }
 
-        .center-text { text-align: center; font-weight: bold; }
-        .center-table td { text-align: center; }
-        .center-table td.left-align { text-align: left; }
-
-        ul { padding-left: 18px; margin-bottom: 10px; }
-        li { margin-bottom: 5px; font-size: 12.5px; }
-
-        .grammar-section { 
-            background-color: #fafafa; 
-            border-left: 4px solid var(--soft-red); 
-            padding: 10px; 
-            margin-bottom: 15px; 
-            border-radius: 4px; 
-            font-size: 12.5px;
-        }
-
-        .note { 
-            font-size: 11px; 
-            color: #7f8c8d; 
-            font-weight: normal; 
-            margin-top: 2px; 
-            display: block; 
-        }
-
-        .highlight { font-weight: bold; color: var(--soft-red); }
-        .eng-text { color: #555; display: block; margin-top: 1px; font-size: 11.5px; }
-
-        /* 📸 每頁最下方的滿版 kids.png 圖檔晶片 (100% 左右填滿) */
-        .footer-image-box {
-            width: calc(100% + 80px); 
-            margin-left: -40px; 
-            margin-top: 15px;
-            overflow: hidden;
-            display: block;
-        }
-
-        .page-footer-img {
-            width: 100%;
-            display: block;
+        .contract-header h2 {
+            color: var(--uci-blue);
+            font-size: 14px;
             margin: 0;
-            padding: 0;
-            border: none;
+            font-weight: normal;
         }
 
-        /* 🎯 貼心二頁保護地基：防止表格或清單溢位撐開 */
-        .page-content p:last-child {
-            margin-bottom: 0;
+        .section-title {
+            background-color: var(--uci-blue);
+            color: #fff;
+            padding: 8px 12px;
+            font-size: 15px;
+            font-weight: bold;
+            margin: 25px 0 10px 0;
+            border-radius: 4px 4px 0 0;
+            display: inline-block;
         }
 
-        /* 🎯 廣告壓軸極簡 Join us 夾心艙 */
-        .last-page-footer-box {
-            width: calc(100% + 80px);
-            margin-left: -40px;
-            margin-top: 15px;
-            position: relative; 
-            overflow: visible; 
-            display: block;
-        }
-
-        /* 🎯 智慧按鈕定位：向上微移至 76% 🔧，完美懸浮於上句文字與小男孩頭髮正中間 */
-        .join-us-btn-container {
-            position: absolute;
-            bottom: 76%; /* 🎨 依照指令：從 72% 往上微移至 76%，精準漂游在中間空隙！ */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 999; 
-            text-align: center;
-        }
-
-        .cta-join-us-img {
+        /* 🔒 守護方格地基：死死鎖定傳統表格排版 */
+        table {
             width: 100%;
-            max-width: 110px; 
-            height: auto;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 13px;
+            table-layout: fixed;
+        }
+
+        th, td {
+            border: 1px solid var(--uci-blue);
+            padding: 8px;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f0f4f8;
+            color: var(--uci-blue);
+            text-align: center; 
+            width: 22%;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        th span.zh-title {
+            font-size: 13px;
+            display: block;
+            font-weight: bold;
+        }
+        th span.en-title {
+            font-size: 10px;
+            display: block;
+            font-weight: normal;
+            opacity: 0.85;
+        }
+
+        td {
+            position: relative;
+            text-align: left;
+        }
+
+        .text-input, .static-course-display {
+            border: none;
+            background: transparent;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            font-family: inherit;
+            font-size: 13px;
+            color: inherit;
+            padding: 4px;
+        }
+
+        .static-course-display {
+            font-weight: bold;
+            color: #0077b6;
+        }
+
+        .text-input:focus {
+            background-color: rgba(254, 204, 7, 0.15);
+        }
+
+        .radio-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; 
+            gap: 12px;
+            padding-left: 4px;
+            height: 100%;
+            flex-wrap: wrap;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
             cursor: pointer;
-            transition: transform 0.2s, filter 0.2s;
+            white-space: nowrap;
+        }
+
+        .legal-box {
+            border: 1px solid #ccc;
+            background-color: #fafbfc;
+            padding: 20px;
+            height: 380px; 
+            overflow-y: scroll;
+            font-size: 13px;
+            line-height: 1.7;
+            text-align: left;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .legal-item {
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 15px;
+        }
+
+        .legal-item:last-child {
+            border-bottom: none;
+        }
+
+        .legal-item strong {
+            color: var(--uci-blue);
+            font-size: 14px;
+        }
+
+        .legal-en {
+            color: #555;
+            font-style: italic;
+            display: block;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        /* ✍️ 手寫簽名板專屬配艙 */
+        .signature-canvas-container {
+            width: 100%;
+            height: 150px;
+            background-color: #fff;
+            border: 1px dashed var(--uci-blue);
+            position: relative;
+            border-radius: 4px;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
             display: block;
         }
 
-        .cta-join-us-img:hover {
-            transform: scale(1.05);
-            filter: brightness(1.08);
+        .canvas-clear-btn {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            font-size: 11px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
         }
 
-        /* ================================================================= */
-        /* 🚨 核心剛性 A4 防跑版列印雷達保護晶片 */
-        /* ================================================================= */
+        .agreement-banner {
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #c00;
+            margin: 25px 0;
+            padding: 10px;
+            background-color: rgba(204, 0, 0, 0.05);
+            border: 1px solid #c00;
+            border-radius: 4px;
+        }
+
+        /* 🌟 核心折疊魔術控鈕晶片 ── 閃爍亮眼的下一階指引裝甲 */
+        .magic-next-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .magic-next-btn {
+            background-color: var(--uci-blue);
+            color: #fff;
+            border: 2px solid var(--uci-gold);
+            padding: 12px 40px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+
+        .magic-next-btn:hover {
+            background-color: #24528a;
+            transform: scale(1.03);
+        }
+
+        /* 🔒 隱藏遮罩：家長未簽章前，學員基本資料表格絕不提早暴露洩漏 */
+        #hiddenFormSection {
+            display: none;
+            border-top: 3px dashed var(--uci-blue);
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        .submit-btn-container {
+            text-align: center;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+
+        .submit-btn {
+            background-color: var(--uci-gold);
+            color: var(--uci-blue);
+            border: none;
+            padding: 15px 50px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* 🔒 剛性 A4 列印保護晶片（列印時自動解除折疊，報名表與契約完整攤平輸出） */
         @media print {
             body { background-color: #fff; padding: 0; margin: 0; }
-            .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
-            .page {
-                width: 210mm;      
-                height: 296mm;     
-                page-break-after: always; 
-                page-break-inside: avoid;
-                padding: 20mm 20mm 0 20mm !important; 
-                margin: 0;
-                overflow: hidden;
-            }
-            .page:last-child { page-break-after: avoid; }
-            .header-flex-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-container { max-width: 100%; width: 100%; box-shadow: none; }
+            .page { padding: 10mm 15mm !important; width: 210mm; }
+            #hiddenFormSection { display: block !important; border-top: 1px solid var(--uci-blue); }
+            .legal-box { height: auto !important; overflow-y: visible !important; border: none; background-color: #fff; padding: 0; }
+            .legal-item { page-break-inside: avoid; }
+            .canvas-clear-btn, .submit-btn-container, .magic-next-container { display: none !important; }
+            .signature-canvas-container { border: 1px solid var(--uci-blue); }
             th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .footer-image-box { width: calc(100% + 40mm) !important; margin-left: -20mm !important; }
-            .last-page-footer-box { width: calc(100% + 40mm) !important; margin-left: -20mm !important; }
-            .join-us-btn-container { display: none !important; }
         }
 
         @media (max-width: 768px) {
-            body { padding: 0; }
-            .ad-container { border-radius: 0; box-shadow: none; }
-            .page { padding: 20px 20px 0 20px; min-height: auto; }
-            .header-flex-box { padding: 15px 20px; flex-direction: column-reverse; text-align: center; }
-            .title-group { text-align: center; width: 100%; }
-            .logo-img { max-width: 130px; margin-bottom: 10px; }
-            table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            td { min-width: 180px; }
-            th { min-width: 110px; }
-            .footer-image-box { width: calc(100% + 40px); margin-left: -20px; }
-            .last-page-footer-box { width: calc(100% + 40px); margin-left: -20px; }
-            .join-us-btn-container { bottom: 69%; } /* 行動端同步微升調校 */
+            body { padding: 8px; }
+            .page { padding: 25px 15px; }
+            .page-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            table { width: 800px; } 
         }
     </style>
 </head>
 <body>
 
-<div class="ad-container">
+<div class="page-container">
+    <!-- 📡 傳送門天線：精準同步回傳至 Joy 總指揮官的巴比專屬行政信箱！ -->
+    <form id="contractForm" action="https://formsubmit.co/joy@bobbyenglishschool.com" method="POST" onsubmit="prepareSubmit(event)">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" id="formSubject" name="_subject" value="【二合一線上簽約】Let's Go 1 報名表暨定型化契約回傳通知">
+        <input type="hidden" id="signature_base64" name="家長親筆電子簽名圖檔">
 
-    <!-- ================= PAGE 1 ================= -->
-    <div class="page">
-        <div class="page-content">
-            <!-- 🚀 第一頁標題：完美回歸最經典的紅底並排格式 -->
-            <div class="header-flex-box">
-                <div class="title-group">
-                    <h1>✨ <span class="main-title">Let's Go 1</span> <span class="sub-title">Foundational Class</span> ✨</h1>
-                    <h3>美語不害怕！巴比老師的遊戲大膽說1級班</h3>
-                    <h3 class="eng-sub">Play & Speak English with Confidence! Level 1 Foundational Class</h3>
-                </div>
-                <!-- 補習班 Logo 100% 安全回歸右側守護！ -->
-                <img src="BOBBY ENGLISH SCHOOL_去背檔.png" alt="巴比美語補習班專屬去背標章" class="logo-img">
+        <!-- 2026 巴比死數字核心隱形數據 -->
+        <input type="hidden" name="就讀班級名稱" value="Let's Go 1">
+        <input type="hidden" name="[核定修業] 上課時段" value="每週授課3次，每次2小時，每週共計6小時 (每週一、週三、週五 1:30 PM - 3:30 PM)">
+        <input type="hidden" name="[收費明細] 學費" value="31620 元">
+        <input type="hidden" name="[收費明細] 教材講義費" value="1268 元">
+        <input type="hidden" name="[收費明細] 學雜費" value="3060 元">
+        <input type="hidden" name="[總計繳費金額]" value="35948 元">
+
+        <div class="page">
+            <div class="contract-header">
+                <h1>私立巴比美語短期補習班 ｜ 短期補習服務契約書</h1>
+                <h2>Let's Go 1 專屬智慧報名暨服務契約書 (二合一完全體)</h2>
+                <p style="font-size: 11px; color: #666; margin: 10px 0 0 0;">(依據教育部短期補習班補習服務契約書範本與桃園市最新設立及管理法規制定-2026年改版)</p>
             </div>
 
-            <h2>💡 課程理念 | Course Concept</h2>
-            <p><strong>全美語聽不懂？不敢說？巴比老師用滿滿的遊戲，帶孩子在玩樂中無痛解鎖聽、說、讀！</strong></p>
-            <p>我們不急著讓剛接觸美語的寶貝拿筆死記硬背，而是透過精心設計的互動與配對遊戲，先讓孩子徹底愛上開口的第一步！從模仿到自信表達，自然而然建立扎實的語感。</p>
-            <p><strong>Too shy to speak in an all-English classroom? Teacher Bobby uses fun games to help kids effortlessly unlock listening, speaking, and reading!</strong></p>
-            <p>No rush to write—our priority is to make children fall in love with their very first steps in English! Through immersive matching, imitating, and repeating activities, we lay a joyful and solid foundation for early English enlightenment.</p>
+            <!-- 🎯 契約審閱確認條款 -->
+            <div class="privacy-statement" style="background-color: #f0f4f8; padding: 12px; border-left: 4px solid var(--uci-blue); font-size: 13px; margin-bottom: 20px;">
+                <strong>【重要權益：契約審閱權】 / Contract Review Right</strong><br>
+                本定型化契約書於中華民國115年由學員及監護人攜回審閱（契約審閱期間至少為五日）。甲方簽章確認已充分審閱。<br>
+                <span style="color: #555; font-style: italic;">This standard contract was taken home by the student/parent for review (The contract review period shall be at least five days). Signature below confirms full review.</span>
+            </div>
 
-            <h2>🎯 課程核心教學重點 | Course Highlights</h2>
-            <p>本課程專注於啟發孩子的雙語感知，全方位奠定美語啟盟基礎：</p>
+            <!-- 📄 【第一階段】優先暴露：計費核定與法規本文 -->
+            <div class="section-title">一、選讀班級、科目與學費核定明細 / Course & Billing Details</div>
             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 30%;">教學指標 | Learning Focus</th>
-                        <th style="width: 70%;">核心養成特色 | Core Features</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
-                        <td class="center-text">🔤 字母與拼讀啟盟<br>Alphabet & Phonics</td>
-                        <td>掌握 26 個英文字通的標準書寫與認讀，並開始具備拼湊與連結英文字母以組成單字的初階能力。<br>
-                        <span class="eng-text">Master standard alphabet writing and recognition, while beginning to recall and connect letters that form basic words!</span></td>
+                        <th><span class="zh-title">選讀核定班別</span><span class="en-title">Enrolled Course</span></th>
+                        <td class="static-course-display" style="font-size: 14px; font-weight: bold;">Let's Go 1 美語不害怕!巴比老師的遊戲大膽說1級班</td>
+                        <th><span class="zh-title">標準修業上課時段</span><span class="en-title"> Timetable</span></th>
+                        <td style="font-size: 11.5px; font-weight: bold; color: var(--uci-blue);">每週星期一、三、五 下午 1:30 - 3:30 p.m. (共 51 堂)</td>
                     </tr>
                     <tr>
-                        <td class="center-text">🗣️ 指令理解與日常對話<br>Directions & Questions</td>
-                        <td>輕鬆聽懂並跟隨課堂基礎美語指令，能自信詢問與回答日常生活中的必備社交與問答句型。<br>
-                        <span class="eng-text">Understand and follow basic classroom directions with ease; confidently ask and answer essential questions for daily activities!</span></td>
+                        <th><span class="zh-title">(1) 學費 Tuition</span></th>
+                        <td style="font-weight: bold;">NT$ 31,620 元</td>
+                        <th><span class="zh-title">(2) 講義教材費 Materials</span></th>
+                        <td style="font-weight: bold;">NT$ 1,268 元</td>
                     </tr>
                     <tr>
-                        <td class="center-text">👁️ 視覺記憶與奠基<br>Visual Vocabulary</td>
-                        <td>透過生動的視覺插圖高效記憶單字。藉由配對與反覆練習，無痛累積高頻率核心字彙。<br>
-                        <span class="eng-text">Memorize English words effortlessly through vivid visual illustrations, reinforcing core vocabulary through structural repetition!</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- 📸 PAGE 1 最下方滿版 kids.png -->
-        <div class="footer-image-box">
-            <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
-        </div>
-    </div>
-
-    <!-- ================= PAGE 2 ================= -->
-    <div class="page">
-        <div class="page-content" style="padding-top: 15px;">
-            <h2>🗺️ 8大單元主題與發音寶庫 | Themes & Phonics</h2>
-            <p>聚焦於實用生活子音與五大短母音，帶領孩子展開有趣的主題探索：</p>
-            <ul>
-                <li><strong>第一單元: 學校用品 | Unit 1: Things for School</strong> 🎒 <em>(發音 | Phonics: Bb / Pp 子音練習)</em></li>
-                <li><strong>第二單元: 顏色和形狀 | Unit 2: Colors & Shapes</strong> 🎨 <em>(發音 | Phonics: Cc / Gg 子音練習)</em></li>
-                <li><strong>第三單元: 在商店裡 | Unit 3: At the Store</strong> 🛒 <em>(發音 | Phonics: Dd / Tt 子音練習)</em></li>
-                <li><strong>第四單元: 家庭成員 | Unit 4: Meet My Family</strong> 👨‍👩‍👧‍👦 <em>(發音 | Phonics: Aa 短母音練習)</em></li>
-                <li><strong>第五單元: 生日快樂 | Unit 5: Happy Birthday</strong> 🎂 <em>(發音 | Phonics: Ee 短母音練習)</em></li>
-                <li><strong>第六單元: 戶外活動 | Unit 6: Outdoor Activities</strong> ☀️ <em>(發音 | Phonics: Ii 短母音練習)</em></li>
-                <li><strong>第七單元: 常見的食物 | Unit 7: Favorite Foods</strong> 🍕 <em>(發音 | Phonics: Oo 短母音練習)</em></li>
-                <li><strong>第八單元: 動物大集合 | Unit 8: Animals</strong> 🦁 <em>(發音 | Phonics: Uu 短母音練習)</em></li>
-            </ul>
-            <p><strong>🎁 額外加碼發音補充教材 | Bonus Phonics Materials：</strong><br>
-            精心搭配《New Phonics Kids 1 The Alphabet》與《Phonics Kids Activity Book 1》，從最標準的發音源頭量身打造完美直覺！</p>
-
-            <h2>📝 實用聽說練習精華 | Practical Conversations</h2>
-            <ul>
-                <li>學會自信說出自己的名字，並流利詢問與回答生活物品的名稱。<br><span class="eng-text">Learn to say one's own name and fluently ask and answer the names of objects.</span></li>
-                <li>熟練基礎社交打招呼，並能主動詢問與描述各種顏色及形狀。<br><span class="eng-text">Master basic greetings and actively ask and answer questions about colors and shapes.</span></li>
-                <li>學會大方介紹新朋友，並能準確詢問與回答物品的數量及名稱。<br><span class="eng-text">Learn to introduce friends and accurately ask and answer the quantities and names of items.</span></li>
-                <li>溫馨介紹自己和家人，並能運用簡單形容詞描述人們的外表。<br><span class="eng-text">Introduce oneself and family members, and describe people's appearances using simple adjectives.</span></li>
-                <li>快樂會說生日快樂、大方詢問他人年紀，並靈活運用基礎形容詞。<br><span class="eng-text">Say happy birthday, ask about age, and flexibly use everyday adjectives.</span></li>
-                <li>輕鬆形容天氣狀態、詢問數量，並能準確說出物品擺放的位置。<br><span class="eng-text">Describe the weather, ask about quantities, and state where objects are located.</span></li>
-                <li>清楚表達自己想吃的食物，並能熱情詢問他人的飲食喜好。<br><span class="eng-text">Express what food one wants to eat and ask others about their food preferences.</span></li>
-                <li>樂於與他人分享並主動詢問彼此最喜歡的顏色與動物。<br><span class="eng-text">Share and ask others about their favorite colors and animals with joy.</span></li>
-            </ul>
-        </div>
-
-        <!-- 📸 PAGE 2 最下方滿版 kids.png -->
-        <div class="footer-image-box">
-            <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
-        </div>
-    </div>
-
-    <!-- ================= PAGE 3 ================= -->
-    <div class="page">
-        <div class="page-content" style="padding-top: 15px;">
-            <h2>📝 核心語法觀念 | Grammar Essentials</h2>
-            <div class="grammar-section">
-                <p style="margin: 0 0 6px 0; font-weight: bold;">精準掌握代名詞、所有格、人稱代名詞與 Be 動詞用法；熟練 Wh-問句、場所介系詞、不定冠詞 (a/an)、指示詞 (this/that/these/those) 以及 there 引導的存在句型。</p>
-                <span class="eng-text" style="color: #666;">Master pronouns, possessives, and Be verbs; proficient in Wh-questions, prepositions of place, articles (a/an), demonstratives, and sentences beginning with "there".</span>
-            </div>
-
-            <h2>📌 班級招生資訊 | Course Details</h2>
-            <table class="center-table">
-                <thead>
-                    <tr>
-                        <th style="width: 35%;">招生項目 | Information Item</th>
-                        <th style="width: 65%;">班級詳細資訊 | Class Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>📅 課程日期 | Course Dates</strong></td>
-                        <td class="left-align">2026年8月31日正式開課 至 01月08日（每週一、三、五）<br>Starts from August 31, 2026 to January 8, 2027 (Every Mon, Wed, Fri)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>⏰ 上課時間 | Class Time</strong></td>
-                        <td class="left-align">每週星期一、三、五 下午 1:30 - 3:30 p.m. (每堂 2 小時)<br>Every Mon, Wed, Fri from 1:30 PM to 3:30 PM (2 hours per class)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>📅 總堂數 | Total Lessons</strong></td>
-                        <td class="left-align">全期共 51 堂課<br>51 lessons in total for the entire semester</td>
-                    </tr>
-                    <tr>
-                        <td><strong>🎒 招生對象 | Target Students</strong></td>
-                        <td class="left-align">國小一至二年級（美語零基礎或初學者）<br>Elementary School Grades 1-2 (Beginners with zero English background)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>👑 招生人數 | Class Size</strong></td>
-                        <td class="left-align">小班教學，招生人數10人<br>Small group class, 10 students max</td>
-                    </tr>
-                    <tr>
-                        <td><strong>💰 課程學費 | Tuition Fee</strong></td>
-                        <td class="left-align">
-                            <strong>NT$35,948元</strong>
-                            <!-- 🎯 會計防線優化：將原本模糊的拆解公式修正為百分之百精確的連動明細字串 -->
-                            <span class="note">備註：全期基本學費 $31,620元 + 專屬教材費 $1,268元 + 當期學雜費 $3,060元</span>
-                            <span class="note" style="margin-top:2px;">Note: Base Tuition $31,620 + Textbooks $1,268 + School Fees $3,060</span>
-                        </td>
+                        <th><span class="zh-title">(3) 當期學雜費 Misc</span></th>
+                        <td style="font-weight: bold;">NT$ 3,060 元</td>
+                        <th><span class="zh-title">核定繳費總金額 Grand Total</span></th>
+                        <td style="font-weight: bold; color: #c00; font-size: 14px;">NT$ 35,948 元</td>
                     </tr>
                 </tbody>
             </table>
 
-            <!-- 💡 體驗課熱血號角看板 -->
-            <div class="pyp-badge">
-                <h4>🎯 預約巴比老師專屬體驗課 | Book Your Trial Lesson Today</h4>
-                <p>現在就幫孩子預約巴比老師的體驗，踏出大膽開口的第一步！</p>
-                <span class="eng-text" style="color: #444; font-weight: bold;">Book a trial lesson with Teacher Bobby today and take the first step toward bold fluency! Join us now!</span>
+            <div class="section-title">二...應記載條款 (法規契約本文) / Model Contract Provisions</div>
+            <div class="legal-box" id="legalBoxContainer">
+                <div class="legal-item">
+                    <strong>前言：契約收受確認 / Preamble: Acknowledgment of Contract Receipt：</strong><br>
+                    甲方確認於實際上課日前已收受並攜回本契約原本審閱至少五日，充分理解並同意全部條款細則。<br>
+                    <span class="legal-en">Party A confirms that this standard contract was taken home for review prior to the official class date, and the contract review period shall be at least five days.</span>
+                </div>
+                <div class="legal-item">
+                    <strong>第一條：就讀課程科目內容 / Article 1: Course Content：</strong><br>
+                    本課程為一般系統化正規美語進度班（Let's Go 1 基礎發音拼讀啟盟、日常情境指令理解對話、視覺核心字彙與視覺記憶養成），非屬保證班。<br>
+                    <span class="legal-en">This course is a standard systematic progression class (Let's Go 1 Children's English including Phonics, situational dialogues, listening, speaking, reading, and visual vocabulary) and is NOT a "guaranteed success" program.</span>
+                </div>
+                <div class="legal-item">
+                    <strong>第二條：桃園市法定退費標準 / Article 2: Refund Policy (Taoyuan City)：</strong><br>
+                    依據「桃園市短期補習班退費管理自治條例」規定辦理：(1) 開課日前30日以前要退費者退還100%；(2) 開課日前1至29日退費者退還90%（留存上限一千元）；(3) 開課日起5日內要求退費者退還80%；(4) 開課日起第六日至全期三分之一內退費者退還50%；(5) 已逾全期三分之一者，得全數不予退還。(6) 已發放之代辦教材費不予退還。<br>
+                    <span class="legal-en">Refunds comply with Taoyuan City standards: (1) 30+ days before start: 100% refund; (2) 1-29 days before start: 90% refund (school retention capped at NT$1,000); (3) Within 5 days of start: 80% refund; (4) From 6th day until 1/3 of course term: 50% refund; (5) After 1/3 of course term: Non-refundable. (6) Distributed textbooks are non-refundable.</span>
+                </div>
+                <div class="legal-item">
+                    <strong>第三條：請假規範與補課機制 / Article 3: Leave and Make-up Lessons：</strong><br>
+                    1. 學生因病、事假缺席，家長須於上課前兩小時透過官方 LINE 或電話完成請假程序。<br>
+                    2. 完成請假者，本班提供由導師安排合適時間進行一對一/小組補課與課後輔導。<br>
+                    3. 未請假曠課者視同放棄堂數，不予安排補課、不扣除學費或退費。<br>
+                    <span class="legal-en">1. Parents must request leave via LINE or phone at least 2 hours prior to class for sickness or personal matters.<br>2. Approved absences will be offered 1-on-1 or small-group make-up tutorings arranged by the instructor.<br>3. Unexcused truancy constitutes a waiver of lesson rights; no make-up classes or refunds will be issued.</span>
+                </div>
+                <div class="legal-item">
+                    <strong>第四條：專業師資與場所保障 / Article 4: Qualifications and Safety Compliance：</strong><br>
+                    1. 乙方確保教學場所公共安全設施、消防設備及公共意外責任險完全符合政府法令規範。<br>
+                    2. 乙方聘任之教師（如任課教師 Bobby 林仲齊、經辦老師 Joy 林婷玉 等）均具備合格資格，並落實實名防查，無正當事由不任意更換。<br>
+                    <span class="legal-en">1. Party B ensures that the teaching venue’s safety facilities and liability insurance comply with regulations.<br>2. Instructors (such as Teacher Bobby, Teacher Joy) possess qualified credentials and pass background checks.</span>
+                </div>
+                <div class="legal-item">
+                    <strong>第五條：肖像權合理授權與個資保護 / Article 5: Portrait Rights and Privacy Protection：</strong><br>
+                    家長同意補習班在課堂教學、成果發表中拍照錄影，合理用於成果展示與官方推廣。補習班嚴格遵守《個人資料保護法》，未經同意絕不外洩個人資料。<br>
+                    <span class="legal-en">Parents authorize reasonable portrait usage for official promotional marketing or internal displays. All data will be handled strictly in full compliance with the Personal Data Protection Act.</span>
+                </div>
+            </div>
+
+            <div class="agreement-banner">
+                本人已詳細閱讀、理解並完全同意上述所有巴比美語短期補習服務條款。家長於下方完成親筆電子簽章，即代表完全承認並代為履行本契約之所有法律權利與義務。<br>
+                <span style="font-size: 11px; font-weight: normal; display: block; margin-top: 3px; font-style: italic;">I have read, understood, and fully agreed to all terms. Electronic signature below implies full authorization and execution of all rights and obligations under this contract.</span>
+            </div>
+
+            <p style="font-size: 12px; color: #c00; font-weight: bold; margin: 0 0 8px 4px;" id="sigLabelLink">✍️ 家長/監護人親筆電子簽名 (看完全文後請在此簽名)：</p>
+            <div class="signature-canvas-container" id="canvasAnchor">
+                <canvas id="sigPad"></canvas>
+                <button type="button" class="canvas-clear-btn" onclick="clearSigPad()">清除重簽 / Clear</button>
+            </div>
+
+            <!-- 🔒 核心解鎖鈕晶片：沒簽名就點擊會觸發自動滑動雷達 -->
+            <div class="magic-next-container" id="nextTriggerBtnBlock">
+                <button type="button" class="magic-next-btn" onclick="unlockHiddenForm()">下一步：填寫學員基本資料 / Next: Student Info ➔</button>
+            </div>
+
+
+            <!-- ============================================================= -->
+            <!-- 📄 【第二階段】魔術隱藏艙：只有簽章解鎖後，填報表格才會滑出亮燈 -->
+            <!-- ============================================================= -->
+            <div id="hiddenFormSection">
+                <div class="section-title">三、學員與監護人基本填報資料 / Student & Guardian Profiles</div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th><span class="zh-title">學員中文姓名</span><span class="en-title">Chinese Name</span></th>
+                            <td><input type="text" name="student_name_zh" class="text-input" placeholder="小寶貝中文名"></td>
+                            <th><span class="zh-title">學員英文姓名</span><span class="en-title">English Name</span></th>
+                            <td><input type="text" name="student_name_en" class="text-input" placeholder="Peter / Mary"></td>
+                            <th><span class="zh-title">學員性別</span><span class="en-title">Gender</span></th>
+                            <td>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="gender" value="男"> 男/M</label>
+                                    <label><input type="radio" name="gender" value="女"> 女/F</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="zh-title">出生日期</span><span class="en-title">Date of Birth</span></th>
+                            <td><input type="date" name="dob" class="text-input"></td>
+                            <th><span class="zh-title">就讀學校</span><span class="en-title">School</span></th>
+                            <td><input type="text" name="school" class="text-input" placeholder="小學全銜"></td>
+                            <th><span class="zh-title">就讀年級</span><span class="en-title">Grade</span></th>
+                            <td>
+                                <div style="display: flex; align-items: center; justify-content: flex-start; padding: 0 4px; height: 100%;">
+                                    第 <input type="text" name="grade" style="border: none; border-bottom: 1px solid #333; width: 35px; text-align: center; margin: 0 3px; background: transparent; outline: none;"> 年級
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="zh-title">家長/監護人姓名</span><span class="en-title">Parent's Name</span></th>
+                            <td><input type="text" name="parent_name" class="text-input" placeholder="聯絡法定代理人"></td>
+                            <th><span class="zh-title">家長身分證字號</span><span class="en-title">Guardian ID</span></th>
+                            <td colspan="3"><input type="text" name="parent_id" class="text-input" placeholder="身分證字號 (依教育部定型化契約範本必填項目，僅供合約識別)"></td>
+                        </tr>
+                        <tr>
+                            <th><span class="zh-title">主要聯絡手機</span><span class="en-title">Phone Number</span></th>
+                            <td><input type="tel" name="phone" class="text-input" placeholder="家長手機號碼"></td>
+                            <th><span class="zh-title">家長 LINE ID</span><span class="en-title">LINE ID</span></th>
+                            <td colspan="3"><input type="text" name="line_id" class="text-input" placeholder="方便 Joy 老師邀入親師官方群組"></td>
+                        </tr>
+                        <tr>
+                            <th><span class="zh-title">通訊聯絡地址</span><span class="en-title">Mailing Address</span></th>
+                            <td colspan="5"><input type="text" name="address" class="text-input" placeholder="請填寫完整居住聯絡地址" required></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="section-title">四、補習班立案登載與簽約日期核定 / Office Registry</div>
+                <div style="font-size: 12.5px; color: #555; background-color: #fafbfc; border: 1px solid #bdc3c7; padding: 15px; border-radius: 6px; line-height: 1.6;">
+                    <b>補習班全銜：</b>私立巴比美語短期補習班 (Bobby English School)<br>
+                    <b>設立核准立案字號：</b>府教社字第0930131461號 | <b>聯絡電話：</b>03-2161338<br>
+                    <b>負責人兼設立代表人：</b>巴比班主任 (林婷玉) / <b>行政經辦審查人員：</b>Joy (林婷玉) <br>
+                    <b>立案地址：</b>330 桃園市桃園區莊二街156號1樓<br>
+                    <b>電子合約正式簽署生效日期 (Date of Agreement)：</b><span id="currentDateDisplay" style="font-weight: bold; color: var(--uci-blue);"></span>
+                </div>
+
+                <!-- 👑 🎨 圓角黃金按鈕完全體 -->
+                <div class="submit-btn-container">
+                    <button type="submit" id="submitBtn" class="submit-btn">確認基本資料無誤 ── 電子送出合約 / Submit Completed Form</button>
+                </div>
             </div>
         </div>
-
-        <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在「中間黑頭髮小男孩」正上方的 join now 1.png 按鈕 -->
-        <div class="last-page-footer-box">
-            <!-- 🎯 全自動跨網頁天線連動：帶上 ?class=LG1 傳送門訊號，完美綁定大寶庫合約！ -->
-            <div class="join-us-btn-container">
-                <a href="contract.html?class=LG1">
-                    <img src="join now 1.png" alt="立即線上簽約鎖定名額" class="cta-join-us-img">
-                </a>
-            </div>
-            <!-- 📸 底圖滿版左右填滿 -->
-            <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
-        </div>
-    </div>
-
+    </form>
 </div>
 
+<script>
+// ===== HTML5 觸控手寫簽名核心引擎 =====
+var canvas = document.getElementById('sigPad');
+var ctx = canvas.getContext('2d');
+var isDrawing = false;
+var hasSigned = false; // 🔒 智慧防呆遮罩解鎖天線
+
+function resizeCanvas() {
+    canvas.width = canvas.parentElement.clientWidth;
+    canvas.height = canvas.parentElement.clientHeight;
+    ctx.strokeStyle = "#1b3d6d";
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+}
+
+canvas.addEventListener('mousedown', function(e) { isDrawing = true; hasSigned = true; draw(e.offsetX, e.offsetY); });
+canvas.addEventListener('mousemove', function(e) { if(isDrawing) draw(e.offsetX, e.offsetY); });
+window.addEventListener('mouseup', function() { isDrawing = false; ctx.beginPath(); });
+
+canvas.addEventListener('touchstart', function(e) {
+    isDrawing = true;
+    hasSigned = true;
+    var t = e.touches[0];
+    var rect = canvas.getBoundingClientRect();
+    draw(t.clientX - rect.left, t.clientY - rect.top);
+}, {passive: true});
+canvas.addEventListener('touchmove', function(e) {
+    if(!isDrawing) return;
+    var t = e.touches[0];
+    var rect = canvas.getBoundingClientRect();
+    draw(t.clientX - rect.left, t.clientY - rect.top);
+}, {passive: true});
+canvas.addEventListener('touchend', function() { isDrawing = false; ctx.beginPath(); });
+
+function draw(x, y) {
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+}
+
+function clearSigPad() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    hasSigned = false;
+}
+
+// ===== 🔮 核心折疊魔術解鎖控制腦 =====
+function unlockHiddenForm() {
+    var blank = document.createElement('canvas');
+    blank.width = canvas.width;
+    blank.height = canvas.height;
+    
+    // 🎯 智慧防空簽安全雷達：驗證畫布有沒有留下筆跡
+    if (!hasSigned || canvas.toDataURL() === blank.toDataURL()) {
+        alert("⚠️ 智慧防呆提示：家長/監護人必須先在上方白色方框內完成「親筆手寫電子簽章」，才能解鎖填寫基本資料喔！\nPlease sign the contract first.");
+        document.getElementById('sigLabelLink').scrollIntoView({ behavior: 'smooth' });
+        return;
+    }
+    
+    // 🟢 驗證通過：解鎖滑出基本資料表單，並隱藏過渡鈕
+    var hiddenSection = document.getElementById('hiddenFormSection');
+    hiddenSection.style.display = 'block';
+    document.getElementById('nextTriggerBtnBlock').style.display = 'none';
+    
+    // 鎖定表單欄位為必填，防止家長開溜空包彈
+    var inputs = hiddenSection.querySelectorAll('.text-input');
+    inputs.forEach(function(input) {
+        if(input.name !== 'school' && input.name !== 'grade' && input.name !== 'line_id') {
+            input.required = true;
+        }
+    });
+    
+    // 優雅向下滑動，對齊基本資料表抬頭
+    hiddenSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ===== 發校前最後安全防呆驗證與大合體發信 =====
+function prepareSubmit(event) {
+    event.preventDefault();
+    
+    var blank = document.createElement('canvas');
+    blank.width = canvas.width;
+    blank.height = canvas.height;
+    if (!hasSigned || canvas.toDataURL() === blank.toDataURL()) {
+        alert("⚠️ 簽章驗證失敗，請重新簽名！");
+        return false;
+    }
+    
+    // 將簽名畫布一秒氣化為 Base64 鋼鐵代碼字串存入隱藏欄位
+    document.getElementById('signature_base64').value = canvas.toDataURL();
+    
+    document.getElementById('submitBtn').innerText = "正傳送至 Joy 主任審查核定夾...";
+    document.getElementById('submitBtn').disabled = true;
+    document.getElementById('contractForm').submit();
+}
+
+window.onload = function() {
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    var today = new Date();
+    document.getElementById('currentDateDisplay').innerText = today.getFullYear() + " 年 " + (today.getMonth() + 1) + " 月 " + today.getDate() + " 日";
+};
+</script>
 </body>
 </html>
