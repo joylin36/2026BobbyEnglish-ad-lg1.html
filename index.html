@@ -346,8 +346,9 @@
             <!-- 🎯 契約審閱確認條款 -->
             <div class="privacy-statement" style="background-color: #f0f4f8; padding: 12px; border-left: 4px solid var(--uci-blue); font-size: 13px; margin-bottom: 20px;">
                 <strong>【重要權益：契約審閱權】 / Contract Review Right</strong><br>
-                本定型化契約書於中華民國115年由學員及監護人攜回審閱（契約審閱期間至少為五日）。甲方簽章確認已充分審閱並同意條款。<br>
-                <span style="color: #555; font-style: italic;">This standard contract was taken home by the student/parent for review (The contract review period shall be at least five days). Signature below confirms full review and acknowledgment.</span>
+                <!-- 🔮 修正指標 1：全面置入「全自動民國民定年月日填入天線」，家長今天開啟自動顯示今天，100%防呆合規 -->
+                本定型化契約書於中華民國 <span id="reviewYearDisplay" style="font-weight: bold; color: #0077b6;"></span> 年 <span id="reviewMonthDisplay" style="font-weight: bold; color: #0077b6;"></span> 月 <span id="reviewDayDisplay" style="font-weight: bold; color: #0077b6;"></span> 日由學員及監護人攜回審閱（契約審閱期間至少為五日）。甲方簽章確認已充分審閱並同意條款。<br>
+                <span style="color: #555; font-style: italic;">This standard contract was taken home by the student/parent for review on Minguo <span id="reviewYearDisplayEn"></span>/<span id="reviewMonthDisplayEn"></span>/<span id="reviewDayDisplayEn"></span> (The contract review period shall be at least five days). Signature below confirms full review and acknowledgment.</span>
             </div>
 
             <!-- 📄 【第一階段】優先暴露：計費核定與法規本文 -->
@@ -358,22 +359,22 @@
                     <tr>
                         <th><span class="zh-title">選讀核定班別</span><span class="en-title">Enrolled Course</span></th>
                         <td>
+                            <!-- 🔧 修正指標 2：下拉選單項目文字極簡優化，全部剪除括號贅字，換置最俐落官方標準常規級別 -->
                             <select id="courseSelector" name="就讀班級名稱" class="select-input" onchange="syncCourseBrain()">
-                                <option value="Let's Go 1">Let's Go 1 班 (每週一三五 1:30-3:30 PM)</option>
-                                <option value="Let's Go 2">Let's Go 2 班 (每週一三五 1:30-3:30 PM)</option>
-                                <option value="Let's Go 3">Let's Go 3 班 (週一4:30-6:30 & 週三五1:30-3:30)</option>
-                                <option value="Let's Go 4">Let's Go 4 班 (週一4:30-6:30 & 週三五1:30-3:30)</option>
-                                <option value="Let's Go 5">Let's Go 5 班 (每週一三五 4:30-6:30 PM)</option>
-                                <option value="Let's Go 6">Let's Go 6 班 (每週一三五 4:30-6:30 PM)</option>
-                                <option value="Advance A1">Advance A1班 (每週三五 4:30-6:30 PM)</option>
-                                <option value="Advance A2">Advance A2班 (每週二四 4:30-6:30 PM)</option>
-                                <option value="Advance B1 青少年進階美語(新生)">Advance B1 青少年進階美語(新生) (每週二四 7:00-9:00 PM)</option>
-                                <option value="Advance B1 青少年進階美語">Advance B1 青少年進階美語 (每週二四 7:00-9:00 PM)</option>
-                                <option value="Advance B2 青少年進階美語(新生)">Advance B2 青少年進階美語(新生) (每週二四 7:00-9:00 PM)</option>
-                                <option value="Advance B2 青少年進階美語">Advance B2 青少年進階美語 (每週二四 7:00-9:00 PM)</option>
-                                <!-- 👑 修正指標：C1 班級全面正名為「青少年進階美語」，與 B1 高強度一致對齊 -->
-                                <option value="Advance C1 青少年進階美語(新生)">Advance C1 青少年進階美語(新生) (每週一 7:00-9:00 PM)</option>
-                                <option value="Advance C1 青少年進階美語">Advance C1 青少年進階美語 (每週一 7:00-9:00 PM)</option>
+                                <option value="Let's Go 1 兒童美語初級班">Let's Go 1 兒童美語初級班</option>
+                                <option value="Let's Go 2 兒童美語初級班">Let's Go 2 兒童美語初級班</option>
+                                <option value="Let's Go 3 兒童美語中級班">Let's Go 3 兒童美語中級班</option>
+                                <option value="Let's Go 4 兒童美語中級班">Let's Go 4 兒童美語中級班</option>
+                                <option value="Let's Go 5 兒童美語高級班">Let's Go 5 兒童美語高級班</option>
+                                <option value="Let's Go 6 兒童美語高級班">Let's Go 6 兒童美語高級班</option>
+                                <option value="Advance A1">Advance A1 班</option>
+                                <option value="Advance A2">Advance A2 班</option>
+                                <option value="Advance B1 青少年進階美語(新生)">Advance B1 青少年進階美語(新生)</option>
+                                <option value="Advance B1 青少年進階美語">Advance B1 青少年進階美語</option>
+                                <option value="Advance B2 青少年進階美語(新生)">Advance B2 青少年進階美語(新生)</option>
+                                <option value="Advance B2 青少年進階美語">Advance B2 青少年進階美語</option>
+                                <option value="Advance C1 青少年進階美語(新生)">Advance C1 青少年進階美語(新生)</option>
+                                <option value="Advance C1 青少年進階美語">Advance C1 青少年進階美語</option>
                             </select>
                         </td>
                         <th><span class="zh-title">核定修業上課時段</span><span class="en-title">Timetable Schedule</span></th>
@@ -574,25 +575,24 @@
 </div>
 
 <script>
-// ===== 2026 巴比美語核定官方原價智慧資料庫 =====
+// ===== 2026 巴比美語核定官方原價智慧資料庫（👑 修正指標 3：上課時段與核定總堂數 34/38/19 堂全新進化連動大腦） =====
 var courseBrainDatabase = {
-    "Let's Go 1": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 1 課程 (發音拼讀、生活情境與對話訓練)", content_en: "Let's Go 1 Course (Phonics, situational vocabulary, and interactive dialogues)" },
-    "Let's Go 2": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 2 課程 (自然發音進階、生活情境對話、聽說讀寫強化)", content_en: "Let's Go 2 Course (Advanced Phonics, situational dialogues, and 4-skills intensive training)" },
-    "Let's Go 3": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 3 課程 (中英雙語進度教學、語法感知引導、初階閱讀)", content_en: "Let's Go 3 Course (Bilingual progression, introductory reading, and early grammar syntax)" },
-    "Let's Go 4": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 4 課程 (中英雙語進度教學、語法感知引導、進階閱讀)", content_en: "Let's Go 4 Course (Bilingual progression, intermediate reading, and analytical grammar)" },
-    "Let's Go 5": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 5 課程 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 5 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
-    "Let's Go 6": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 6 課程 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 6 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
-    "Advance A1": { tuition: 26180, materials: 2966, misc: 2040, total: 31186, schedule: "每週三五 4:30 - 6:30 PM (共51堂)", content_zh: "Advance A1 兒童進階美語班 特調班", content_en: "Advance A1 Junior Advanced Special Program" },
-    "Advance A2": { tuition: 29260, materials: 3826, misc: 2280, total: 35366, schedule: "每週二四 4:30 - 6:30 PM (共51堂)", content_zh: "Advance A2 兒童進階美語班進度班", content_en: "Advance A2 Junior Advanced Progression Program" },
+    "Let's Go 1 兒童美語初級班": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 1 兒童美語初級班 (發音拼讀、生活情境與對話訓練)", content_en: "Let's Go 1 Course (Phonics, situational vocabulary, and interactive dialogues)" },
+    "Let's Go 2 兒童美語初級班": { tuition: 31620, materials: 1268, misc: 3060, total: 35948, schedule: "每週一三五 1:30 - 3:30 PM (共51堂)", content_zh: "Let's Go 2 兒童美語初級班 (自然發音進階、生活情境對話、聽說讀寫強化)", content_en: "Let's Go 2 Course (Advanced Phonics, situational dialogues, and 4-skills intensive training)" },
+    "Let's Go 3 兒童美語中級班": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 3 兒童美語中級班 (中英雙語進度教學、語法感知引導、初階閱讀)", content_en: "Let's Go 3 Course (Bilingual progression, introductory reading, and early grammar syntax)" },
+    "Let's Go 4 兒童美語中級班": { tuition: 31620, materials: 1572, misc: 3060, total: 36252, schedule: "週一 4:30-6:30 & 週三五 1:30-3:30 PM (共51堂)", content_zh: "Let's Go 4 兒童美語中級班 (中英雙語進度教學、語法感知引導、進階閱讀)", content_en: "Let's Go 4 Course (Bilingual progression, intermediate reading, and analytical grammar)" },
+    "Let's Go 5 兒童美語高級班": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 5 兒童美語高級班 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 5 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
+    "Let's Go 6 兒童美語高級班": { tuition: 31620, materials: 1612, misc: 3060, total: 36292, schedule: "每週一三五 4:30 - 6:30 PM (共51堂)", content_zh: "Let's Go 6 兒童美語高級班 (高階全方位美語、學術讀寫引導、主題簡報主題)", content_en: "Let's Go 6 Course (Advanced 4-skills mastery, academic writing, and thematic presentations)" },
     
-    "Advance B1 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B1 青少年進階美語 (新生方案)", content_en: "Advance B1 Teen Advanced Program (Freshman Plan)" },
-    "Advance B1 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B1 青少年進階美語 (常規方案)", content_en: "Advance B1 Teen Advanced Program (Regular Plan)" },
-    "Advance B2 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B2 青少年進階美語 (新生方案)", content_en: "Advance B2 Teen Advanced Program (Freshman Plan)" },
-    "Advance B2 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共51堂)", content_zh: "Advance B2 青少年進階美語 (常規方案)", content_en: "Advance B2 Teen Advanced Program (Regular Plan)" },
-    
-    // 👑 最終修正指標：C1 班級後台大腦資料庫鍵值同步正名為「青少年進階美語」，大功告成！
-    "Advance C1 青少年進階美語(新生)": { tuition: 14450, materials: 1840, misc: 850, total: 17140, schedule: "每週一 7:00 - 9:00 PM (共51堂)", content_zh: "Advance C1 青少年進階美語 (新生方案)", content_en: "Advance C1 Teen Advanced Program (Freshman Plan)" },
-    "Advance C1 青少年進階美語": { tuition: 14450, materials: 500, misc: 850, total: 15800, schedule: "每週一 7:00 - 9:00 PM (共51堂)", content_zh: "Advance C1 青少年進階美語 (常規方案)", content_en: "Advance C1 Teen Advanced Program (Regular Plan)" }
+    // 👑 修正指標 3：Advance 進階系列各堂數核定修正 (34堂、38堂、19堂)
+    "Advance A1": { tuition: 26180, materials: 2966, misc: 2040, total: 31186, schedule: "每週三五 4:30 - 6:30 PM (共34堂)", content_zh: "Advance A1 兒童進階美語班 特調班", content_en: "Advance A1 Junior Advanced Special Program" },
+    "Advance A2": { tuition: 29260, materials: 3826, misc: 2280, total: 35366, schedule: "每週二四 4:30 - 6:30 PM (共38堂)", content_zh: "Advance A2 兒童進階美語班進度班", content_en: "Advance A2 Junior Advanced Progression Program" },
+    "Advance B1 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B1 青少年進階美語 (新生方案)", content_en: "Advance B1 Teen Advanced Program (Freshman Plan)" },
+    "Advance B1 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B1 青少年進階美語 (常規方案)", content_en: "Advance B1 Teen Advanced Program (Regular Plan)" },
+    "Advance B2 青少年進階美語(新生)": { tuition: 31160, materials: 3240, misc: 2280, total: 36680, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B2 青少年進階美語 (新生方案)", content_en: "Advance B2 Teen Advanced Program (Freshman Plan)" },
+    "Advance B2 青少年進階美語": { tuition: 31160, materials: 500, misc: 2280, total: 33940, schedule: "每週二四 7:00 - 9:00 PM (共38堂)", content_zh: "Advance B2 青少年進階美語 (常規方案)", content_en: "Advance B2 Teen Advanced Program (Regular Plan)" },
+    "Advance C1 青少年進階美語(新生)": { tuition: 14450, materials: 1840, misc: 850, total: 17140, schedule: "每週一 7:00 - 9:00 PM (共19堂)", content_zh: "Advance C1 青少年進階美語 (新生方案)", content_en: "Advance C1 Teen Advanced Program (Freshman Plan)" },
+    "Advance C1 青少年進階美語": { tuition: 14450, materials: 500, misc: 850, total: 15800, schedule: "每週一 7:00 - 9:00 PM (共19堂)", content_zh: "Advance C1 青少年進階美語 (常規方案)", content_en: "Advance C1 Teen Advanced Program (Regular Plan)" }
 };
 
 // ===== HTML5 觸控手寫簽名核心引擎 =====
@@ -686,19 +686,18 @@ function decodeUrlParams() {
         var targetValue = "";
         
         switch(classParam.toUpperCase()) {
-            case 'LG1': targetValue = "Let's Go 1"; break;
-            case 'LG2': targetValue = "Let's Go 2"; break;
-            case 'LG3': targetValue = "Let's Go 3"; break;
-            case 'LG4': targetValue = "Let's Go 4"; break;
-            case 'LG5': targetValue = "Let's Go 5"; break;
-            case 'LG6': targetValue = "Let's Go 6"; break;
+            case 'LG1': targetValue = "Let's Go 1 兒童美語初級班"; break;
+            case 'LG2': targetValue = "Let's Go 2 兒童美語初級班"; break;
+            case 'LG3': targetValue = "Let's Go 3 兒童美語中級班"; break;
+            case 'LG4': targetValue = "Let's Go 4 兒童美語中級班"; break;
+            case 'LG5': targetValue = "Let's Go 5 兒童美語高級班"; break;
+            case 'LG6': targetValue = "Let's Go 6 兒童美語高級班"; break;
             case 'ADV_A1': targetValue = "Advance A1"; break;
             case 'ADV_A2': targetValue = "Advance A2"; break;
             case 'ADV_B1_NEW': targetValue = "Advance B1 青少年進階美語(新生)"; break;
             case 'ADV_B1_UP': targetValue = "Advance B1 青少年進階美語"; break;
             case 'ADV_B2_NEW': targetValue = "Advance B2 青少年進階美語(新生)"; break;
             case 'ADV_B2_UP': targetValue = "Advance B2 青少年進階美語"; break;
-            // 👑 天線解碼接收端同步對齊 C1 新旗艦正名
             case 'ADV_C1_NEW': targetValue = "Advance C1 青少年進階美語(新生)"; break;
             case 'ADV_C1_UP': targetValue = "Advance C1 青少年進階美語"; break;
         }
@@ -783,8 +782,24 @@ window.onload = function() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
     
+    // 🔮 修正指標 1：全自動民國民定年月日即時渲染大腦晶片
     var today = new Date();
-    document.getElementById('currentDateDisplay').innerText = today.getFullYear() + " 年 " + (today.getMonth() + 1) + " 月 " + today.getDate() + " 日";
+    var minguoYear = today.getFullYear() - 1911;
+    var currentMonth = today.getMonth() + 1;
+    var currentDate = today.getDate();
+    
+    // 1. 中文民國同步渲染
+    document.getElementById('reviewYearDisplay').innerText = minguoYear;
+    document.getElementById('reviewMonthDisplay').innerText = currentMonth;
+    document.getElementById('reviewDayDisplay').innerText = currentDate;
+    
+    // 2. 英文民國同步渲染
+    document.getElementById('reviewYearDisplayEn').innerText = minguoYear;
+    document.getElementById('reviewMonthDisplayEn').innerText = currentMonth;
+    document.getElementById('reviewDayDisplayEn').innerText = currentDate;
+    
+    // 3. 底部立案日曆渲染
+    document.getElementById('currentDateDisplay').innerText = today.getFullYear() + " 年 " + currentMonth + " 月 " + currentDate + " 日";
     
     decodeUrlParams();
     syncCourseBrain();
