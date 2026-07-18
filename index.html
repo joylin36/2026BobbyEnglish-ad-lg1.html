@@ -247,10 +247,10 @@
             display: block;
         }
 
-        /* 🎯 智慧按鈕定位：向上微移至 76% 🔧，完美懸浮於上句文字與小男孩頭髮正中間 */
+        /* 🎯 智慧按鈕定位：懸浮於上句文字與小男孩頭髮正中間 */
         .join-us-btn-container {
             position: absolute;
-            bottom: 76%; /* 🎨 依照指令：從 72% 往上微移至 76%，精準漂游在中間空隙！ */
+            bottom: 76%; 
             left: 50%;
             transform: translateX(-50%);
             z-index: 999; 
@@ -271,9 +271,7 @@
             filter: brightness(1.08);
         }
 
-        /* ================================================================= */
-        /* 🚨 核心剛性 A4 防跑版列印雷達保護晶片 */
-        /* ================================================================= */
+        /* 🚨 核心 A4 防跑版列印雷達 */
         @media print {
             body { background-color: #fff; padding: 0; margin: 0; }
             .ad-container { max-width: 100%; width: 100%; box-shadow: none; border-radius: 0; }
@@ -306,7 +304,7 @@
             th { min-width: 110px; }
             .footer-image-box { width: calc(100% + 40px); margin-left: -20px; }
             .last-page-footer-box { width: calc(100% + 40px); margin-left: -20px; }
-            .join-us-btn-container { bottom: 69%; } /* 行動端同步微升調校 */
+            .join-us-btn-container { bottom: 69%; } 
         }
     </style>
 </head>
@@ -317,14 +315,13 @@
     <!-- ================= PAGE 1 ================= -->
     <div class="page">
         <div class="page-content">
-            <!-- 🚀 第一頁標題：完美回歸最經典的紅底並排格式 -->
+            <!-- 🚀 第一頁標題 -->
             <div class="header-flex-box">
                 <div class="title-group">
                     <h1>✨ <span class="main-title">Let's Go 1</span> <span class="sub-title">Foundational Class</span> ✨</h1>
                     <h3>美語不害怕！巴比老師的遊戲大膽說1級班</h3>
                     <h3 class="eng-sub">Play & Speak English with Confidence! Level 1 Foundational Class</h3>
                 </div>
-                <!-- 補習班 Logo 100% 安全回歸右側守護！ -->
                 <img src="BOBBY ENGLISH SCHOOL_去背檔.png" alt="巴比美語補習班專屬去背標章" class="logo-img">
             </div>
 
@@ -441,14 +438,13 @@
                         <td class="left-align">國小一至二年級（美語零基礎或初學者）<br>Elementary School Grades 1-2 (Beginners with zero English background)</td>
                     </tr>
                     <tr>
-                        <td><strong>👑 招生人數 | Class Size</strong></td>
+                        <td><strong>📅 招生人數 | Class Size</strong></td>
                         <td class="left-align">小班教學，招生人數10人<br>Small group class, 10 students max</td>
                     </tr>
                     <tr>
                         <td><strong>💰 課程學費 | Tuition Fee</strong></td>
                         <td class="left-align">
                             <strong>NT$35,948元</strong>
-                            <!-- 🎯 會計防線優化：將原本模糊的拆解公式修正為百分之百精確的連動明細字串 -->
                             <span class="note">備註：全期基本學費 $31,620元 + 專屬教材費 $1,268元 + 當期學雜費 $3,060元</span>
                             <span class="note" style="margin-top:2px;">Note: Base Tuition $31,620 + Textbooks $1,268 + School Fees $3,060</span>
                         </td>
@@ -466,11 +462,9 @@
 
         <!-- 📸 PAGE 3 最下方滿版 kids.png + 疊加在「中間黑頭髮小男孩」正上方的 join now 1.png 按鈕 -->
         <div class="last-page-footer-box">
-            <!-- 🎯 全自動跨網頁天線連動：精準將原先對錯的 contract.html 修正為大寶庫中的實體二合一網頁 advancec1.html，帶上 ?class=LG1 傳送門訊號！ -->
+            <!-- 🎯 傳送門修正落成：加載進階 JavaScript 雙響炮大腦，一秒同時流暢彈出獨立報名表與獨立合約書兩大分頁！ -->
             <div class="join-us-btn-container">
-                <a href="advancec1.html?class=LG1">
-                    <img src="join now 1.png" alt="立即線上簽約鎖定名額" class="cta-join-us-img">
-                </a>
+                <img src="join now 1.png" alt="立即線上填報名表與法律契約書鎖定名額" class="cta-join-us-img" onclick="openDoublePortals()">
             </div>
             <!-- 📸 底圖滿版左右填滿 -->
             <img src="kids.png" alt="巴比美語學員快樂探究合照" class="page-footer-img">
@@ -479,5 +473,19 @@
 
 </div>
 
+<script>
+// ===== 🔮 核心異步傳送大腦：一秒無瑕同時在瀏覽器彈出報名表與定型化契約雙軌分頁 =====
+function openDoublePortals() {
+    // 📡 傳送通道 A：巴比官方指定 Let's Go 1 專屬獨立線上報名表網址 (100% 剪除尾巴斜線防 404)
+    var formUrl = "https://joylin36.github.io/2026BobbyEnglish-Lets-Go-lg1.html";
+    
+    // 📡 傳送通道 B：巴比官方指定 2026 旗艦版獨立定型化合約書網址
+    var contractUrl = "https://joylin36.github.io/2026BobbyEnglish-Contract.html";
+    
+    // 🔥 啟動雙向分頁發射引擎：讓家長在手機上兩份重要文件同時平鋪開啟讀寫！
+    window.open(formUrl, '_blank');
+    window.open(contractUrl, '_blank');
+}
+</script>
 </body>
 </html>
